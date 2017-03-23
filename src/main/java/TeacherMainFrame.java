@@ -1,4 +1,8 @@
 import javax.swing.*;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.TableModelEvent;
+import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -26,6 +30,86 @@ public class TeacherMainFrame extends conn {
 
     public TeacherMainFrame() throws SQLException, ClassNotFoundException {
         ConnObj = new conn();
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    table1.setModel(Update_table());
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                doRemoveQuest.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        try {
+                            ConnObj.DeleteQuest(Integer.parseInt(defaultTableModel.getValueAt(table1.getSelectedRow(), 0).toString()));
+                            JOptionPane.showMessageDialog(null,"Вопрос удален успешно", "Операция выполнена",JOptionPane.INFORMATION_MESSAGE);
+                            table1.setModel(Update_table());
+                        } catch (SQLException e1) {
+                            e1.printStackTrace();
+                        } catch (ClassNotFoundException e1) {
+                            e1.printStackTrace();
+                        }
+
+
+                    }
+                });
+
+                JFrame DashboardFrame = new JFrame(Const.PROGRAM_NAME);
+                DashboardFrame.add(panel1);
+                DashboardFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                DashboardFrame.setSize(800, 800);
+                DashboardFrame.setVisible(true);
+
+                doAddNewQuest.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        String question = JOptionPane.showInputDialog(null,"Введите вопрос", "Добавление нового вопроса",JOptionPane.PLAIN_MESSAGE);
+                        ArrayList<String> answers = new ArrayList<String>();
+                        if (question.length() >0 ) {
+                            String ans1=JOptionPane.showInputDialog(null,"Введите ответ", "Добавление ответа 1",JOptionPane.PLAIN_MESSAGE);
+                            answers.add(ans1);
+                            String ans2=JOptionPane.showInputDialog(null,"Введите ответ", "Добавление ответа 2",JOptionPane.PLAIN_MESSAGE);
+                            answers.add(ans2);
+                            String ans3=JOptionPane.showInputDialog(null,"Введите ответ", "Добавление ответа 3",JOptionPane.PLAIN_MESSAGE);
+                            answers.add(ans3);
+                            String ans4=JOptionPane.showInputDialog(null,"Введите ответ", "Добавление ответа 4",JOptionPane.PLAIN_MESSAGE);
+                            answers.add(ans4);
+
+                            if ((ans1.length() + ans2.length() + ans3.length() + ans4.length())>0){
+                                Object right_answ=JOptionPane.showInputDialog(null,"Введите вопрос", "Добавление правильного ответа",JOptionPane.PLAIN_MESSAGE, null,answers.toArray(),answers.get(0));
+                                try {
+                                    new conn().WriteDB(question,ans1,ans2,ans3,ans4,answers.indexOf(right_answ)+1);
+                                    table1.setModel(Update_table());
+                                    JOptionPane.showMessageDialog(null,"Новый вопрос добавлен успешно", "Операция выполнена",JOptionPane.INFORMATION_MESSAGE);
+                                } catch (SQLException e1) {
+                                    e1.printStackTrace();
+                                } catch (IOException e1) {
+                                    e1.printStackTrace();
+                                } catch (ClassNotFoundException e1) {
+                                    e1.printStackTrace();
+                                }
+                            }
+                        }
+
+                    }
+                });
+            }
+
+        });
+
+
+
+
+
+    }
+
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
+
+    private DefaultTableModel Update_table() throws SQLException, ClassNotFoundException {
         connection = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
 
         preparedStatement = connection.prepareStatement("SELECT * FROM QuestionList");
@@ -52,64 +136,7 @@ public class TeacherMainFrame extends conn {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        table1.setModel(defaultTableModel);
 
-
-        doRemoveQuest.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    ConnObj.DeleteQuest(Integer.parseInt(defaultTableModel.getValueAt(table1.getSelectedRow(), 0).toString()));
-                    //TODO: Обновить содержимое таблицы
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
-                } catch (ClassNotFoundException e1) {
-                    e1.printStackTrace();
-                }
-            }
-        });
-
-        JFrame DashboardFrame = new JFrame(Const.PROGRAM_NAME);
-        DashboardFrame.add(panel1);
-        DashboardFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        DashboardFrame.setSize(800, 800);
-        DashboardFrame.setVisible(true);
-
-        doAddNewQuest.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String question = JOptionPane.showInputDialog(null,"Введите вопрос", "Добавление нового вопроса",JOptionPane.PLAIN_MESSAGE);
-                ArrayList<String> answers = new ArrayList<String>();
-                    if (question.length() >0 ) {
-                        String ans1=JOptionPane.showInputDialog(null,"Введите ответ", "Добавление ответа 1",JOptionPane.PLAIN_MESSAGE);
-                        answers.add(ans1);
-                        String ans2=JOptionPane.showInputDialog(null,"Введите ответ", "Добавление ответа 2",JOptionPane.PLAIN_MESSAGE);
-                        answers.add(ans2);
-                        String ans3=JOptionPane.showInputDialog(null,"Введите ответ", "Добавление ответа 3",JOptionPane.PLAIN_MESSAGE);
-                        answers.add(ans3);
-                        String ans4=JOptionPane.showInputDialog(null,"Введите ответ", "Добавление ответа 4",JOptionPane.PLAIN_MESSAGE);
-                        answers.add(ans4);
-
-                        if ((ans1.length() + ans2.length() + ans3.length() + ans4.length())>0){
-                            Object right_answ=JOptionPane.showInputDialog(null,"Введите вопрос", "Добавление правильного ответа",JOptionPane.PLAIN_MESSAGE, null,answers.toArray(),answers.get(0));
-                            try {
-                                new conn().WriteDB(question,ans1,ans2,ans3,ans4,answers.indexOf(right_answ)+1);
-                                //TODO:Добавить обновление таблицы
-                            } catch (SQLException e1) {
-                                e1.printStackTrace();
-                            } catch (IOException e1) {
-                                e1.printStackTrace();
-                            } catch (ClassNotFoundException e1) {
-                                e1.printStackTrace();
-                            }
-                        }
-                    }
-            }
-        });
-
-
-    }
-
-
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
+        return defaultTableModel;
     }
 }
