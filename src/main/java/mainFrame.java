@@ -3,6 +3,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 
 /**
@@ -32,7 +33,13 @@ public class mainFrame extends JFrame {
 
         doStudentFrame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new StudentMainFrame();
+                try {
+                    new StudentMainFrame();
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                } catch (ClassNotFoundException e1) {
+                    e1.printStackTrace();
+                }
                 closeFrame();
             }
         });
