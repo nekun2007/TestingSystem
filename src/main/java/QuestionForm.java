@@ -10,6 +10,7 @@ public class QuestionForm extends JDialog {
     private JRadioButton radioButton3;
     private JRadioButton radioButton4;
     private JPanel panel1;
+    private JLabel label1;
 
     public QuestionForm() {
         setContentPane(contentPane);
