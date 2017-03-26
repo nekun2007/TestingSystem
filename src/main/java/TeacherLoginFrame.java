@@ -12,7 +12,7 @@ public class TeacherLoginFrame {
     private JPanel panel1;
 
     public TeacherLoginFrame() {
-        JFrame loginFrame = new JFrame(Const.PROGRAM_NAME);
+        final JFrame loginFrame = new JFrame(Const.PROGRAM_NAME);
         loginFrame.setSize(500,300);
         loginFrame.add(panel1);
         loginFrame.setVisible(true);
@@ -37,6 +37,7 @@ public class TeacherLoginFrame {
                 } else {
                     try {
                         new TeacherMainFrame();
+                        loginFrame.dispose();
                     } catch (SQLException e1) {
                         e1.printStackTrace();
                     } catch (ClassNotFoundException e1) {

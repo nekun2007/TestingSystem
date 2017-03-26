@@ -1,7 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -9,19 +13,18 @@ import java.util.Random;
  */
 public class StudentMainFrame {
     JFrame studentFrame;
-    JLabel[] jLabels;
     ButtonGroup groups[] = new ButtonGroup[20];
     JRadioButton btn[] = new JRadioButton[80];
-    ArrayList<Integer> questions = new ArrayList<Integer>();
+   public ArrayList<Integer> questions = new ArrayList<Integer>();
+    public HashMap<Integer, Integer> faq = new HashMap<Integer, Integer>();
 
     public StudentMainFrame() throws SQLException, ClassNotFoundException {
         questions.clear();
+        faq.clear();
         studentFrame = new JFrame(Const.PROGRAM_NAME);
         JPanel container = new JPanel();
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
-        JScrollPane[] jScrollPane = new JScrollPane[20];
         JPanel[] panels = new JPanel[20];
-        JLabel[] labels = new JLabel[20];
         groups = new ButtonGroup[20];
         JScrollPane jScrollPane1 = new JScrollPane(container, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         for (int i = 0; i < 20; i++) {
@@ -31,7 +34,7 @@ public class StudentMainFrame {
             panels[i].setVisible(true);
             panels[i].add(new JLabel(getQuestion()));
             for (int j = 0; j < 4; j++) {
-                btn[j] = new JRadioButton(generateQuetion(0));
+                btn[j] = new JRadioButton(generateQuetion(i));
                 panels[i].add(btn[j]);
                 groups[i].add(btn[j]);
             }
@@ -40,7 +43,14 @@ public class StudentMainFrame {
         }
         JButton answ = new JButton("Завершить");
 
-        //TODO: добавить кнопку "Завершить"
+       answ.addActionListener(new ActionListener() {
+           public void actionPerformed(ActionEvent e) {
+               doCheckAnswers();
+                FinishResult fr = new FinishResult();
+               fr.textArea1.setText("asdasdasdasd");
+               fr.showFinishResult();
+           }
+       });
 
 
         studentFrame.getContentPane().add(jScrollPane1);
@@ -50,11 +60,15 @@ public class StudentMainFrame {
         studentFrame.setVisible(true);
     }
 
-    private String generateQuetion(int questID) {
+    private String generateQuetion(int questID) throws ClassNotFoundException, SQLException {
         String res = null;
-        //TODO запрос к бд + получение варинтов ответа, получить ID вопроса можно через наш уже заполненый массив вопросов
+        Connection conn = null;
+        Class.forName("org.sqlite.JDBC");
+        conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
+        PreparedStatement preparedStmt = conn.prepareStatement("SELECT Ans1,Ans2,Ans3,Ans4 FROM QuestionList WHERE id = ?");
+        preparedStmt.setInt(1,questions.get(questID));
 
-        res= String.valueOf(Const.ANSWER_ID);
+        res = preparedStmt.executeQuery().getString("Ans"+(Const.ANSWER_ID+1));
         Const.ANSWER_ID+=1;
         return res;
     }
@@ -64,8 +78,6 @@ public class StudentMainFrame {
         Class.forName("org.sqlite.JDBC");
         conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
 
-        PreparedStatement preparedStaement = conn.prepareStatement("SELECT Question,Right,id FROM QuestionList");
-        ResultSet resultSet = preparedStaement.executeQuery();
 
         PreparedStatement findMax = conn.prepareStatement("SELECT MAX(id) as id FROM QuestionList");
         int max = findMax.executeQuery().getInt("id");
@@ -76,16 +88,23 @@ public class StudentMainFrame {
             Random rand = new Random();
             int rnd = rand.nextInt(max);
             if (!questions.contains(rnd) && rnd != 0) {
-                System.out.println(rnd);
+               // System.out.println(rnd);
                 questions.add(rnd);
                 k++;
-
-                //TODO подключаемся к бд и тырим текст задания зная ID + создаеv HasMap 9 двумерный массив с ответом и ID вопроса
-
-                return String.valueOf(rnd);
+                PreparedStatement preparedStatement = conn.prepareStatement("SELECT Question,`Right` FROM QuestionList WHERE id = ?");
+                preparedStatement.setInt(1,rnd); //пиздюк
+                faq.put(rnd,preparedStatement.executeQuery().getInt("Right"));
+                return preparedStatement.executeQuery().getString("Question");
             }
         }
 
         return null;
+    }
+
+    private void doCheckAnswers() {
+        //TODO проверка овтетов и вывод конечного резульатат (баллы)
+       for (Map.Entry<Integer, Integer> pair : faq.entrySet()) {
+           System.out.println(pair.getKey());
+       }
     }
 }
