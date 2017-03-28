@@ -3,10 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by Никита on 18.03.2017.
@@ -15,12 +12,16 @@ public class StudentMainFrame {
     JFrame studentFrame;
     ButtonGroup groups[] = new ButtonGroup[20];
     JRadioButton btn[] = new JRadioButton[80];
-   public ArrayList<Integer> questions = new ArrayList<Integer>();
-    public HashMap<Integer, Integer> faq = new HashMap<Integer, Integer>();
+    JLabel[] labels = new JLabel[20];
+    private ArrayList<Integer> questions = new ArrayList<Integer>();
+    private LinkedList<Integer> faq = new LinkedList<Integer>();
+    private ArrayList<String> rightAnswers = new ArrayList<String>();
+    private ArrayList<String> notRightAnswers = new ArrayList<String>();
 
     public StudentMainFrame() throws SQLException, ClassNotFoundException {
         questions.clear();
         faq.clear();
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         studentFrame = new JFrame(Const.PROGRAM_NAME);
         JPanel container = new JPanel();
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
@@ -29,15 +30,21 @@ public class StudentMainFrame {
         JScrollPane jScrollPane1 = new JScrollPane(container, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         for (int i = 0; i < 20; i++) {
             panels[i] = new JPanel();
+            labels[i] = new JLabel((i+1) +". " + getQuestion());
             panels[i].setLayout(new BoxLayout(panels[i],BoxLayout.Y_AXIS));
             groups[i]=new ButtonGroup();
             panels[i].setVisible(true);
-            panels[i].add(new JLabel(getQuestion()));
+            panels[i].add(labels[i]);
             for (int j = 0; j < 4; j++) {
                 btn[j] = new JRadioButton(generateQuetion(i));
+                btn[j].setActionCommand(String.valueOf(j+1));
                 panels[i].add(btn[j]);
                 groups[i].add(btn[j]);
             }
+            JRadioButton hidden = new JRadioButton("hidden",true);
+            hidden.setVisible(false);
+            groups[i].add(hidden);
+            hidden.setActionCommand("0");
             Const.ANSWER_ID=0;
             container.add(panels[i]);
         }
@@ -45,10 +52,7 @@ public class StudentMainFrame {
 
        answ.addActionListener(new ActionListener() {
            public void actionPerformed(ActionEvent e) {
-               doCheckAnswers();
-                FinishResult fr = new FinishResult();
-               fr.textArea1.setText("asdasdasdasd");
-               fr.showFinishResult();
+                   doCheckAnswers();
            }
        });
 
@@ -56,6 +60,7 @@ public class StudentMainFrame {
         studentFrame.getContentPane().add(jScrollPane1);
         studentFrame.add(answ,BorderLayout.SOUTH);
         studentFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        studentFrame.setLocation(dim.width/2-studentFrame.getSize().width/2,dim.height/2-studentFrame.getSize().height/2);
         studentFrame.setSize(800, 800);
         studentFrame.setVisible(true);
     }
@@ -86,14 +91,15 @@ public class StudentMainFrame {
         int k = 0;
         while(k !=1) {
             Random rand = new Random();
-            int rnd = rand.nextInt(max);
+            final int rnd = rand.nextInt(max);
             if (!questions.contains(rnd) && rnd != 0) {
                // System.out.println(rnd);
                 questions.add(rnd);
                 k++;
                 PreparedStatement preparedStatement = conn.prepareStatement("SELECT Question,`Right` FROM QuestionList WHERE id = ?");
                 preparedStatement.setInt(1,rnd); //пиздюк
-                faq.put(rnd,preparedStatement.executeQuery().getInt("Right"));
+                Integer toArray =rnd;
+                faq.add(preparedStatement.executeQuery().getInt("Right"));
                 return preparedStatement.executeQuery().getString("Question");
             }
         }
@@ -102,9 +108,38 @@ public class StudentMainFrame {
     }
 
     private void doCheckAnswers() {
-        //TODO проверка овтетов и вывод конечного резульатат (баллы)
-       for (Map.Entry<Integer, Integer> pair : faq.entrySet()) {
-           System.out.println(pair.getKey());
-       }
+        FinishResult fr = new FinishResult();
+
+        for(int i=0; i < 20; i++) {
+            if (groups[i].getSelection().isSelected()) {
+                if (groups[i].getSelection().getActionCommand().equals(String.valueOf(faq.get(i)))) {
+                    Const.RESULT+=1;
+                    rightAnswers.add(labels[i].getText());
+                } else {
+                    notRightAnswers.add(labels[i].getText());
+                }
+            }
+        }
+
+        fr.textArea1.append("Ваш результат " + Const.RESULT + " из 20\n");
+        System.out.println(rightAnswers.size());
+        if (rightAnswers.size() > 0) {
+            fr.textArea1.append("\n");
+            fr.textArea1.append("Вы ответили правильно на следующие вопросы: \n");
+            for (int i = 0; i < rightAnswers.size(); i++) {
+                fr.textArea1.append(rightAnswers.get(i) + "\n");
+            }
+        }
+
+        if (notRightAnswers.size() != 0) {
+            fr.textArea1.append("\n");
+            fr.textArea1.append("Вам не удалось ответить на следующие вопросы: \n");
+            for (int i = 0; i < notRightAnswers.size(); i++) {
+                fr.textArea1.append(notRightAnswers.get(i) + "\n");
+            }
+        }
+
+        fr.showFinishResult();
+        studentFrame.dispose();
     }
 }
