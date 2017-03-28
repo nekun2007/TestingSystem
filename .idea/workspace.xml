@@ -7,22 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da6db78d-df12-482c-a503-c2d72d7261b2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/FinishResult.form" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/FinishResult.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Questions.s3db" afterPath="$PROJECT_DIR$/Questions.s3db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Const.class" afterPath="$PROJECT_DIR$/target/classes/Const.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/QuestionForm$1.class" afterPath="$PROJECT_DIR$/target/classes/QuestionForm$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/QuestionForm$2.class" afterPath="$PROJECT_DIR$/target/classes/QuestionForm$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/QuestionForm$3.class" afterPath="$PROJECT_DIR$/target/classes/QuestionForm$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/QuestionForm$4.class" afterPath="$PROJECT_DIR$/target/classes/QuestionForm$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/QuestionForm.class" afterPath="$PROJECT_DIR$/target/classes/QuestionForm.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StudentMainFrame.class" afterPath="$PROJECT_DIR$/target/classes/StudentMainFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TeacherLoginFrame$1.class" afterPath="$PROJECT_DIR$/target/classes/TeacherLoginFrame$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TeacherLoginFrame$2.class" afterPath="$PROJECT_DIR$/target/classes/TeacherLoginFrame$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TeacherLoginFrame$3.class" afterPath="$PROJECT_DIR$/target/classes/TeacherLoginFrame$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TeacherLoginFrame.class" afterPath="$PROJECT_DIR$/target/classes/TeacherLoginFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mainFrame$1.class" afterPath="$PROJECT_DIR$/target/classes/mainFrame$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mainFrame$2.class" afterPath="$PROJECT_DIR$/target/classes/mainFrame$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Db_Test.class" afterPath="$PROJECT_DIR$/target/test-classes/Db_Test.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mainFrame.class" afterPath="$PROJECT_DIR$/target/classes/mainFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/StudentMainFrame.java" afterPath="$PROJECT_DIR$/src/main/java/StudentMainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/TeacherLoginFrame.java" afterPath="$PROJECT_DIR$/src/main/java/TeacherLoginFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/FinishResult.form" afterPath="$PROJECT_DIR$/src/main/java/FinishResult.form" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/TeacherLoginFrame.form" afterPath="$PROJECT_DIR$/src/main/java/TeacherLoginFrame.form" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mainFrame.form" afterPath="$PROJECT_DIR$/src/main/java/mainFrame.form" />
     </list>
     <ignored path="tester.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,14 +51,6 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Sqlite (Xerial) - Questions.s3db" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="QuestionList" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -70,32 +62,34 @@
       <file leaf-file-name="db.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/db.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="204">
               <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mainFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="41" />
-              <folding />
-            </state>
+      <file leaf-file-name="mainFrame.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mainFrame.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TeacherLoginFrame.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TeacherLoginFrame.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="conn.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/conn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
+            <state relative-caret-position="289">
               <caret line="25" column="16" selection-start-line="24" selection-start-column="0" selection-end-line="27" selection-end-column="47" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="imports" expanded="false" />
                 <marker date="1489871173637" expanded="true" signature="905:1059" ph="CREATE TABLE... if" />
                 <marker date="1489871173637" expanded="true" signature="1700:1740" ph="SELECT MAX(i... " />
                 <marker date="1489871173637" expanded="true" signature="2207:2233" ph="SELECT * FRO... QuestionList" />
@@ -109,25 +103,17 @@
       <file leaf-file-name="StudentMainFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/StudentMainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#485#494#0" expanded="true" />
-                <element signature="e#552#570#0" expanded="true" />
-                <marker date="1490485703509" expanded="true" signature="2616:2673" ph="SELECT Ans1,... QuestionList" />
-                <marker date="1490485703509" expanded="true" signature="3156:3194" ph="SELECT MAX(i... QuestionList" />
-                <marker date="1490485703509" expanded="true" signature="3611:3652" ph="SELECT Quest... QuestionList" />
-                <marker date="1490485703509" expanded="true" signature="3611:3665" ph="SELECT Quest... QuestionList" />
-              </folding>
+            <state relative-caret-position="778">
+              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TeacherLoginFrame.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TeacherLoginFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/TeacherLoginFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="493">
               <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
               <folding />
             </state>
@@ -137,10 +123,10 @@
       <file leaf-file-name="Db_Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Db_Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="204">
               <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="imports" expanded="false" />
                 <marker date="1490478385759" expanded="true" signature="423:447" ph="INSERT INTO QuestionList... " />
                 <marker date="1490478385759" expanded="true" signature="423:492" ph="INSERT INTO QuestionList... " />
                 <marker date="1490478385759" expanded="true" signature="423:516" ph="INSERT INTO QuestionList... " />
@@ -152,32 +138,17 @@
       <file leaf-file-name="FinishResult.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/FinishResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+            <state relative-caret-position="119">
+              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FinishResult.form" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FinishResult.form" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/FinishResult.form">
           <provider selected="true" editor-type-id="ui-designer">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TeacherMainFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/TeacherMainFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="120" column="29" selection-start-line="120" selection-start-column="29" selection-end-line="120" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2476#4767#0" expanded="true" />
-                <element signature="e#4766#4767#0" expanded="true" />
-                <marker date="1490445269553" expanded="true" signature="5145:5171" ph="SELECT * FRO... QuestionList" />
-              </folding>
-            </state>
           </provider>
         </entry>
       </file>
@@ -216,7 +187,6 @@
         <option value="$PROJECT_DIR$/src/main/java/gui.form" />
         <option value="$PROJECT_DIR$/src/main/java/gui1.form" />
         <option value="$PROJECT_DIR$/src/main/java/gui1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mainFrame.form" />
         <option value="$PROJECT_DIR$/src/main/java/QueryTabelModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/TeacherMainFrame.form" />
         <option value="$PROJECT_DIR$/src/main/java/conn.java" />
@@ -230,10 +200,12 @@
         <option value="$PROJECT_DIR$/src/main/java/Const.java" />
         <option value="$PROJECT_DIR$/src/test/java/Db_Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/mainFrame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FinishResult.form" />
         <option value="$PROJECT_DIR$/src/main/java/FinishResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/StudentMainFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/TeacherLoginFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StudentMainFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TeacherLoginFrame.form" />
+        <option value="$PROJECT_DIR$/src/main/java/mainFrame.form" />
+        <option value="$PROJECT_DIR$/src/main/java/FinishResult.form" />
       </list>
     </option>
   </component>
@@ -290,108 +262,11 @@
     </navigator>
     <panes>
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tester" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tester" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tester" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tester" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tester" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tester" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tester" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tester" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tester" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tester" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tester" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TeacherLoginFrame" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -408,138 +283,6 @@
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="322" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Questions.s3db</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/TODO.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/TeacherMainFrame.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/QuestionForm.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/TeacherLoginFrame.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/TeacherMainFrame$1.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/TeacherMainFrame.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/intellij/uiDesigner/core/GridLayoutManager.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/db.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/test.class</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.gitignore</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/TeacherMainFrame$2.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/intellij/uiDesigner/core/AbstractLayout.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/intellij/uiDesigner/core/DimensionInfo.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/intellij/uiDesigner/core/GridConstraints.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/intellij/uiDesigner/core/GridLayoutManager.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/intellij/uiDesigner/core/HorizontalInfo.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/intellij/uiDesigner/core/LayoutState.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/intellij/uiDesigner/core/Spacer.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/intellij/uiDesigner/core/SupportCode.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/intellij/uiDesigner/core/Util.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/intellij/uiDesigner/core/VerticalInfo.class</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Application.db">
     <configuration default="false" name="db" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -1021,7 +764,10 @@
       <workItem from="1489611171506" duration="4806000" />
       <workItem from="1489840483837" duration="1055000" />
       <workItem from="1489845561084" duration="24655000" />
-      <workItem from="1490444929703" duration="25329000" />
+      <workItem from="1490444929703" duration="26809000" />
+      <workItem from="1490561066623" duration="319000" />
+      <workItem from="1490736206075" duration="40000" />
+      <workItem from="1490736306157" duration="832000" />
     </task>
     <task id="LOCAL-00001" summary="Добавили отображение панелей">
       <created>1490447838736</created>
@@ -1044,11 +790,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490480596614</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Добавили форму с конечным результатом, сделали вывод вопросов и вариантов ответа, сделали hide форму авторизации для преподавателя">
+      <created>1490486808199</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1490486808199</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59023000" />
+    <option name="totallyTimeSpent" value="61694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
@@ -1056,20 +809,20 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35023043" sideWeight="0.4875" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34982738" sideWeight="0.4875" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5125" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2983871" sideWeight="0.51537216" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2983871" sideWeight="0.4875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2983871" sideWeight="0.48462784" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28640777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976957" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1125,7 +878,8 @@
     <MESSAGE value="Добавили отображение панелей" />
     <MESSAGE value="problem with button and buttongroup is resolved" />
     <MESSAGE value="Added Random Generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Random Generator" />
+    <MESSAGE value="Добавили форму с конечным результатом, сделали вывод вопросов и вариантов ответа, сделали hide форму авторизации для преподавателя" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавили форму с конечным результатом, сделали вывод вопросов и вариантов ответа, сделали hide форму авторизации для преподавателя" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1140,9 +894,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1154,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1162,9 +913,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1174,7 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1182,9 +930,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1199,7 +945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1207,9 +952,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1224,7 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1232,9 +974,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1249,7 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1257,9 +996,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1274,7 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1282,11 +1018,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/gui1.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/gui1.form" />
     <entry file="file://$PROJECT_DIR$/src/main/java/gui.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/mainFrame.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/721b227e-e96f-4cd1-98f3-10ed338e84ec/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1304,16 +1035,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CreateNewQuestPopup.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/CreateNewQuestPopup.form" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/TeacherLoginFrame.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TODO.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1321,7 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="18" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1330,14 +1054,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test123.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Test123.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/TeacherMainFrame.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -1347,7 +1064,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1360,20 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
           <caret line="120" column="29" selection-start-line="120" selection-start-column="29" selection-end-line="120" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2476#4767#0" expanded="true" />
-            <element signature="e#4766#4767#0" expanded="true" />
-            <marker date="1490445269553" expanded="true" signature="5145:5171" ph="SELECT * FRO... QuestionList" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1387,10 +1089,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/conn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
+        <state relative-caret-position="289">
           <caret line="25" column="16" selection-start-line="24" selection-start-column="0" selection-end-line="27" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <marker date="1489871173637" expanded="true" signature="905:1059" ph="CREATE TABLE... if" />
             <marker date="1489871173637" expanded="true" signature="1700:1740" ph="SELECT MAX(i... " />
             <marker date="1489871173637" expanded="true" signature="2207:2233" ph="SELECT * FRO... QuestionList" />
@@ -1402,10 +1104,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Db_Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="204">
           <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <marker date="1490478385759" expanded="true" signature="423:447" ph="INSERT INTO QuestionList... " />
             <marker date="1490478385759" expanded="true" signature="423:492" ph="INSERT INTO QuestionList... " />
             <marker date="1490478385759" expanded="true" signature="423:516" ph="INSERT INTO QuestionList... " />
@@ -1414,63 +1116,70 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/49cb435/721b227e-e96f-4cd1-98f3-10ed338e84ec/QuestionList">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TeacherLoginFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StudentMainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="778">
+          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TeacherLoginFrame.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mainFrame.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FinishResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FinishResult.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FinishResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/StudentMainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#485#494#0" expanded="true" />
-            <element signature="e#552#570#0" expanded="true" />
-            <marker date="1490485703509" expanded="true" signature="2616:2673" ph="SELECT Ans1,... QuestionList" />
-            <marker date="1490485703509" expanded="true" signature="3156:3194" ph="SELECT MAX(i... QuestionList" />
-            <marker date="1490485703509" expanded="true" signature="3611:3652" ph="SELECT Quest... QuestionList" />
-            <marker date="1490485703509" expanded="true" signature="3611:3665" ph="SELECT Quest... QuestionList" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TeacherLoginFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
-          <folding />
-        </state>
       </provider>
     </entry>
   </component>

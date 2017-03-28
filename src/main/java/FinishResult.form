@@ -14,7 +14,7 @@
         </constraints>
         <properties>
           <font name="Times New Roman" size="28"/>
-          <text value="Label"/>
+          <text value="Тест завершен!"/>
         </properties>
       </component>
       <scrollpane id="1b656">
