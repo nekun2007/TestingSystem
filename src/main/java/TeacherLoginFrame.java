@@ -19,7 +19,8 @@ public class TeacherLoginFrame {
 
         doExit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+                new mainFrame();
+                loginFrame.dispose();
             }
         });
 
@@ -43,7 +44,6 @@ public class TeacherLoginFrame {
                     } catch (ClassNotFoundException e1) {
                         e1.printStackTrace();
                     }
-                    //TODO: реализовать окно преподавателя
                 }
             }
         });

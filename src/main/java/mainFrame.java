@@ -13,6 +13,7 @@ public class mainFrame extends JFrame {
     private JButton doTeacherFrame;
     private JButton doStudentFrame;
     private JPanel panel1;
+    private JButton выходButton;
     public JFrame mainFrameGUI;
 
     public mainFrame() {
@@ -41,6 +42,12 @@ public class mainFrame extends JFrame {
                     e1.printStackTrace();
                 }
                 closeFrame();
+            }
+        });
+
+        выходButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.exit(0);
             }
         });
     }
