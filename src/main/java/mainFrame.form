@@ -30,7 +30,7 @@
         </constraints>
         <properties>
           <font name="Times New Roman" size="20"/>
-          <text value="Label"/>
+          <text value="Добро пожаловать!"/>
         </properties>
       </component>
       <component id="9479c" class="javax.swing.JButton" binding="выходButton" default-binding="true">
