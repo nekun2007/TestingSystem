@@ -61,6 +61,7 @@ public class TeacherMainFrame extends conn {
                 DashboardFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 DashboardFrame.setSize(800, 800);
                 DashboardFrame.setVisible(true);
+                DashboardFrame.setLocationRelativeTo(null);
 
                 doAddNewQuest.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
