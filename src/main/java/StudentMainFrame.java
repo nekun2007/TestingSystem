@@ -17,6 +17,8 @@ public class StudentMainFrame {
     private LinkedList<Integer> faq = new LinkedList<Integer>();
     private ArrayList<String> rightAnswers = new ArrayList<String>();
     private ArrayList<String> notRightAnswers = new ArrayList<String>();
+   // private ArrayList<String> yourAnswer = new ArrayList<String>();
+   // private ArrayList<String> rightAnswer = new ArrayList<String>();
 
     public StudentMainFrame() throws SQLException, ClassNotFoundException {
         questions.clear();
@@ -30,39 +32,39 @@ public class StudentMainFrame {
         JScrollPane jScrollPane1 = new JScrollPane(container, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         for (int i = 0; i < 20; i++) {
             panels[i] = new JPanel();
-            labels[i] = new JLabel((i+1) +". " + getQuestion());
-            panels[i].setLayout(new BoxLayout(panels[i],BoxLayout.Y_AXIS));
-            groups[i]=new ButtonGroup();
+            labels[i] = new JLabel((i + 1) + ". " + getQuestion());
+            panels[i].setLayout(new BoxLayout(panels[i], BoxLayout.Y_AXIS));
+            groups[i] = new ButtonGroup();
             panels[i].setVisible(true);
             panels[i].add(labels[i]);
             for (int j = 0; j < 4; j++) {
                 btn[j] = new JRadioButton(generateQuetion(i));
-                btn[j].setActionCommand(String.valueOf(j+1));
+                btn[j].setActionCommand(String.valueOf(j + 1));
                 panels[i].add(btn[j]);
                 groups[i].add(btn[j]);
             }
-            JRadioButton hidden = new JRadioButton("hidden",true);
+            JRadioButton hidden = new JRadioButton("hidden", true);
             hidden.setVisible(false);
             groups[i].add(hidden);
             hidden.setActionCommand("0");
-            Const.ANSWER_ID=0;
+            Const.ANSWER_ID = 0;
             container.add(panels[i]);
         }
         JButton answ = new JButton("Завершить");
 
-       answ.addActionListener(new ActionListener() {
-           public void actionPerformed(ActionEvent e) {
-                   doCheckAnswers();
-           }
-       });
+        answ.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                doCheckAnswers();
+            }
+        });
 
 
         studentFrame.getContentPane().add(jScrollPane1);
-        studentFrame.add(answ,BorderLayout.SOUTH);
+        studentFrame.add(answ, BorderLayout.SOUTH);
         studentFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        studentFrame.setLocation(dim.width/2-studentFrame.getSize().width/2,dim.height/2-studentFrame.getSize().height/2);
         studentFrame.setSize(800, 800);
         studentFrame.setVisible(true);
+        studentFrame.setLocationRelativeTo(null);
     }
 
     private String generateQuetion(int questID) throws ClassNotFoundException, SQLException {
@@ -71,10 +73,10 @@ public class StudentMainFrame {
         Class.forName("org.sqlite.JDBC");
         conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
         PreparedStatement preparedStmt = conn.prepareStatement("SELECT Ans1,Ans2,Ans3,Ans4 FROM QuestionList WHERE id = ?");
-        preparedStmt.setInt(1,questions.get(questID));
+        preparedStmt.setInt(1, questions.get(questID));
 
-        res = preparedStmt.executeQuery().getString("Ans"+(Const.ANSWER_ID+1));
-        Const.ANSWER_ID+=1;
+        res = preparedStmt.executeQuery().getString("Ans" + (Const.ANSWER_ID + 1));
+        Const.ANSWER_ID += 1;
         return res;
     }
 
@@ -89,16 +91,15 @@ public class StudentMainFrame {
 
 
         int k = 0;
-        while(k !=1) {
+        while (k != 1) {
             Random rand = new Random();
             final int rnd = rand.nextInt(max);
             if (!questions.contains(rnd) && rnd != 0) {
-               // System.out.println(rnd);
+                // System.out.println(rnd);
                 questions.add(rnd);
                 k++;
                 PreparedStatement preparedStatement = conn.prepareStatement("SELECT Question,`Right` FROM QuestionList WHERE id = ?");
-                preparedStatement.setInt(1,rnd); //пиздюк
-                Integer toArray =rnd;
+                preparedStatement.setInt(1, rnd);
                 faq.add(preparedStatement.executeQuery().getInt("Right"));
                 return preparedStatement.executeQuery().getString("Question");
             }
@@ -110,13 +111,15 @@ public class StudentMainFrame {
     private void doCheckAnswers() {
         FinishResult fr = new FinishResult();
 
-        for(int i=0; i < 20; i++) {
+        for (int i = 0; i < 20; i++) {
             if (groups[i].getSelection().isSelected()) {
                 if (groups[i].getSelection().getActionCommand().equals(String.valueOf(faq.get(i)))) {
-                    Const.RESULT+=1;
+                    Const.RESULT += 1;
                     rightAnswers.add(labels[i].getText());
                 } else {
                     notRightAnswers.add(labels[i].getText());
+                    //yourAnswer.add(groups[i].getSelection().getActionCommand());
+                    //rightAnswer.add(String.valueOf(faq.get(i)));
                 }
             }
         }
@@ -136,6 +139,8 @@ public class StudentMainFrame {
             fr.textArea1.append("Вам не удалось ответить на следующие вопросы: \n");
             for (int i = 0; i < notRightAnswers.size(); i++) {
                 fr.textArea1.append(notRightAnswers.get(i) + "\n");
+                //fr.textArea1.append("Вы ответили: \n" + "   " + yourAnswer.get(i) + "\n");
+               // fr.textArea1.append("Верный ответ: \n" + "   " + yourAnswer.get(i) + "\n");
             }
         }
 

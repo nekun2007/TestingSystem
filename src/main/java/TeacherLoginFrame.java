@@ -16,6 +16,7 @@ public class TeacherLoginFrame {
         loginFrame.setSize(500,300);
         loginFrame.add(panel1);
         loginFrame.setVisible(true);
+        loginFrame.setLocationRelativeTo(null);
 
         doExit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

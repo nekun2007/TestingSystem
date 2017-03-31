@@ -15,5 +15,6 @@ public class FinishResult {
         finish.setSize(700,500);
         finish.setResizable(false);
         finish.setVisible(true);
+        finish.setLocationRelativeTo(null);
     }
 }

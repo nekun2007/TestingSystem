@@ -1,6 +1,5 @@
-
-
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -24,7 +23,9 @@ public class mainFrame extends JFrame {
         mainFrameGUI.setResizable(false);
         mainFrameGUI.add(panel1);
         mainFrameGUI.setVisible(true);
-
+        mainFrameGUI.setLocationRelativeTo(null);
+        Image img= Toolkit.getDefaultToolkit().getImage("C:/Users/Иван/Desktop/russia_640.png");
+        mainFrameGUI.setIconImage(img);
         doTeacherFrame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 new TeacherLoginFrame();
