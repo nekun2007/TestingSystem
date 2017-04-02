@@ -7,11 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da6db78d-df12-482c-a503-c2d72d7261b2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Questions.s3db" afterPath="$PROJECT_DIR$/Questions.s3db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StudentMainFrame.class" afterPath="$PROJECT_DIR$/target/classes/StudentMainFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TeacherMainFrame$1.class" afterPath="$PROJECT_DIR$/target/classes/TeacherMainFrame$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TeacherMainFrame.class" afterPath="$PROJECT_DIR$/target/classes/TeacherMainFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/conn.class" afterPath="$PROJECT_DIR$/target/classes/conn.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/StudentMainFrame.java" afterPath="$PROJECT_DIR$/src/main/java/StudentMainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/TeacherMainFrame.java" afterPath="$PROJECT_DIR$/src/main/java/TeacherMainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/conn.java" afterPath="$PROJECT_DIR$/src/main/java/conn.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db.java" afterPath="$PROJECT_DIR$/src/main/java/db.java" />
     </list>
     <ignored path="tester.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,36 +72,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="db.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="db.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/db.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+            <state relative-caret-position="136">
+              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="conn.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/conn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TeacherMainFrame.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/TeacherMainFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="33" selection-end-column="27" />
-              <folding>
-                <element signature="e#1070#5044#0" expanded="true" />
-                <element signature="e#3028#3036#0" expanded="true" />
-                <element signature="e#5043#5044#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -152,12 +129,12 @@
         <option value="$PROJECT_DIR$/src/main/java/mainFrame.form" />
         <option value="$PROJECT_DIR$/src/main/java/mainFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/TeacherLoginFrame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/db.java" />
         <option value="$PROJECT_DIR$/src/main/java/FinishResult.java" />
         <option value="$PROJECT_DIR$/src/test/java/Db_Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/conn.java" />
         <option value="$PROJECT_DIR$/src/main/java/StudentMainFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/TeacherMainFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db.java" />
       </list>
     </option>
   </component>
@@ -771,7 +748,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491129042800</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="исправлена ошибка подключения к БД и к соответствующей таблице">
+      <created>1491133232707</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1491133232707</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -779,7 +763,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -789,7 +773,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.50907713" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.49092284" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30278233" sideWeight="0.4875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.045826513" sideWeight="0.4875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -856,7 +840,8 @@
     <MESSAGE value="добавлена иконка на все окна" />
     <MESSAGE value="удалена кривая БД" />
     <MESSAGE value="обнаружен косяк с подключением к БД&#10;ранее оно происходло к QuestionList но создается БД Questions&#10;в некоорых местах кода было сохранено старое название&#10;изменил где нашел но ошибка осталась неустранненой" />
-    <option name="LAST_COMMIT_MESSAGE" value="обнаружен косяк с подключением к БД&#10;ранее оно происходло к QuestionList но создается БД Questions&#10;в некоорых местах кода было сохранено старое название&#10;изменил где нашел но ошибка осталась неустранненой" />
+    <MESSAGE value="исправлена ошибка подключения к БД и к соответствующей таблице" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправлена ошибка подключения к БД и к соответствующей таблице" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1130,11 +1115,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/TeacherMainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="-901">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding>
+            <element signature="e#1070#5044#0" expanded="true" />
+            <element signature="e#3028#3036#0" expanded="true" />
+            <element signature="e#5043#5044#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1146,15 +1135,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TeacherMainFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/db.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="33" selection-end-column="27" />
-          <folding>
-            <element signature="e#1070#5044#0" expanded="true" />
-            <element signature="e#3028#3036#0" expanded="true" />
-            <element signature="e#5043#5044#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
