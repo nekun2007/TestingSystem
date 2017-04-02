@@ -57,7 +57,7 @@ public class conn {
 
     public void  ReadDB() throws ClassNotFoundException, SQLException {
         statmt = conn.createStatement();
-        resSet = statmt.executeQuery("SELECT * FROM Questions");
+        resSet = statmt.executeQuery("SELECT * FROM 'Questions'");
 
         while(resSet.next()) {
             int id = resSet.getInt("id");
@@ -83,13 +83,13 @@ public class conn {
         Class.forName("org.sqlite.JDBC");
         conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
         statmt = conn.createStatement();
-        resSet = statmt.executeQuery("SELECT * FROM Questions");
+        resSet = statmt.executeQuery("SELECT * FROM 'Questions'");
         statmt.executeUpdate(String.format("", new Object[0]));
         statmt.execute(String.format("DELETE FROM `Questions` WHERE `id`='%d'", id));
-        int maxId = statmt.executeQuery("SELECT MAX(id) AS id FROM Questions;").getInt("id");
+        int maxId = statmt.executeQuery("SELECT MAX(id) AS id FROM 'Questions';").getInt("id");
 
         for(int i = id + 1; i <= maxId; ++i) {
-            statmt.executeUpdate(String.format("UPDATE Questions SET id = %d WHERE id=%d", i - 1, i));
+            statmt.executeUpdate(String.format("UPDATE 'Questions' SET id = %d WHERE id=%d", i - 1, i));
         }
         System.out.println("Row is deleted");
         resSet.close();

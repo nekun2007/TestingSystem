@@ -30,6 +30,8 @@ public class TeacherMainFrame extends conn {
 
     public TeacherMainFrame() throws SQLException, ClassNotFoundException {
         ConnObj = new conn();
+        ConnObj.Conn();
+        ConnObj.CreateDB();
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -115,7 +117,7 @@ public class TeacherMainFrame extends conn {
     private DefaultTableModel Update_table() throws SQLException, ClassNotFoundException {
         connection = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
 
-        preparedStatement = connection.prepareStatement("SELECT * FROM Questions");
+        preparedStatement = connection.prepareStatement("SELECT * FROM 'Questions'");
         resultSet = preparedStatement.executeQuery();
 
         defaultTableModel = new DefaultTableModel();

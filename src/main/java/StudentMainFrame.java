@@ -89,7 +89,7 @@ public class StudentMainFrame {
         conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
 
 
-        PreparedStatement findMax = conn.prepareStatement("SELECT MAX(id) as id FROM Questions");
+        PreparedStatement findMax = conn.prepareStatement("SELECT MAX(id) as id FROM 'Questions'");
         int max = findMax.executeQuery().getInt("id");
 
 
@@ -101,7 +101,7 @@ public class StudentMainFrame {
                 // System.out.println(rnd);
                 questions.add(rnd);
                 k++;
-                PreparedStatement preparedStatement = conn.prepareStatement("SELECT Question,`Right` FROM Questions WHERE id = ?");
+                PreparedStatement preparedStatement = conn.prepareStatement("SELECT Question,`Right` FROM 'Questions' WHERE id = ?");
                 preparedStatement.setInt(1, rnd);
                 faq.add(preparedStatement.executeQuery().getInt("Right"));
                 return preparedStatement.executeQuery().getString("Question");
