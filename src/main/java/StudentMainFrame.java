@@ -29,7 +29,7 @@ public class StudentMainFrame {
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         JPanel[] panels = new JPanel[20];
         groups = new ButtonGroup[20];
-        JScrollPane jScrollPane1 = new JScrollPane(container, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane jScrollPane1 = new JScrollPane(container, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         for (int i = 0; i < 20; i++) {
             panels[i] = new JPanel();
             labels[i] = new JLabel((i + 1) + ". " + getQuestion());
