@@ -62,6 +62,8 @@ public class TeacherMainFrame extends conn {
                 DashboardFrame.setSize(800, 800);
                 DashboardFrame.setVisible(true);
                 DashboardFrame.setLocationRelativeTo(null);
+                Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
+                DashboardFrame.setIconImage(img);
 
                 doAddNewQuest.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {

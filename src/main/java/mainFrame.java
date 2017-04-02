@@ -24,7 +24,7 @@ public class mainFrame extends JFrame {
         mainFrameGUI.add(panel1);
         mainFrameGUI.setVisible(true);
         mainFrameGUI.setLocationRelativeTo(null);
-        Image img= Toolkit.getDefaultToolkit().getImage("C:/Users/Иван/Desktop/russia_640.png");
+        Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
         mainFrameGUI.setIconImage(img);
         doTeacherFrame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

@@ -65,6 +65,9 @@ public class StudentMainFrame {
         studentFrame.setSize(800, 800);
         studentFrame.setVisible(true);
         studentFrame.setLocationRelativeTo(null);
+        Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
+        studentFrame.setIconImage(img);
+
     }
 
     private String generateQuetion(int questID) throws ClassNotFoundException, SQLException {
