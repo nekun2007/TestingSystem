@@ -57,8 +57,8 @@ public class TeacherMainFrame extends conn {
                 });
 
                 JFrame DashboardFrame = new JFrame(Const.PROGRAM_NAME);
+                DashboardFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 DashboardFrame.add(panel1);
-                DashboardFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 DashboardFrame.setSize(800, 800);
                 DashboardFrame.setVisible(true);
                 DashboardFrame.setLocationRelativeTo(null);
@@ -115,7 +115,7 @@ public class TeacherMainFrame extends conn {
     private DefaultTableModel Update_table() throws SQLException, ClassNotFoundException {
         connection = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
 
-        preparedStatement = connection.prepareStatement("SELECT * FROM QuestionList");
+        preparedStatement = connection.prepareStatement("SELECT * FROM Questions");
         resultSet = preparedStatement.executeQuery();
 
         defaultTableModel = new DefaultTableModel();

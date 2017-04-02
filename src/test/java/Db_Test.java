@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class Db_Test {
     public static void main(String[] args) throws SQLException {
         Connection connection = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
-        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO QuestionList (id, Question, Ans1, Ans2, Ans3, Ans4, Right) VALUES (?,?,?,?,?,?,?)");
+        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Questions (id, Question, Ans1, Ans2, Ans3, Ans4, Right) VALUES (?,?,?,?,?,?,?)");
 
         for(int i=10; i < 25; i++) {
             preparedStatement.setInt(1,i);
