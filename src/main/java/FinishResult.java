@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -16,5 +17,8 @@ public class FinishResult {
         finish.setResizable(false);
         finish.setVisible(true);
         finish.setLocationRelativeTo(null);
+        Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
+        finish.setIconImage(img);
+        finish.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }

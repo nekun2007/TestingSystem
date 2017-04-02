@@ -10,7 +10,5 @@ public class db {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
        guiframe = new mainFrame();
-        //QuestionForm questionForm = new QuestionForm();
-       // questionForm.pack();
     }
 }

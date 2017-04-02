@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 import java.sql.SQLException;
 
@@ -17,6 +18,8 @@ public class TeacherLoginFrame {
         loginFrame.add(panel1);
         loginFrame.setVisible(true);
         loginFrame.setLocationRelativeTo(null);
+        Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
+        loginFrame.setIconImage(img);
 
         doExit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

@@ -65,6 +65,9 @@ public class StudentMainFrame {
         studentFrame.setSize(800, 800);
         studentFrame.setVisible(true);
         studentFrame.setLocationRelativeTo(null);
+        Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
+        studentFrame.setIconImage(img);
+
     }
 
     private String generateQuetion(int questID) throws ClassNotFoundException, SQLException {
@@ -72,7 +75,7 @@ public class StudentMainFrame {
         Connection conn = null;
         Class.forName("org.sqlite.JDBC");
         conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
-        PreparedStatement preparedStmt = conn.prepareStatement("SELECT Ans1,Ans2,Ans3,Ans4 FROM QuestionList WHERE id = ?");
+        PreparedStatement preparedStmt = conn.prepareStatement("SELECT Ans1,Ans2,Ans3,Ans4 FROM Questions WHERE id = ?");
         preparedStmt.setInt(1, questions.get(questID));
 
         res = preparedStmt.executeQuery().getString("Ans" + (Const.ANSWER_ID + 1));
@@ -86,7 +89,7 @@ public class StudentMainFrame {
         conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
 
 
-        PreparedStatement findMax = conn.prepareStatement("SELECT MAX(id) as id FROM QuestionList");
+        PreparedStatement findMax = conn.prepareStatement("SELECT MAX(id) as id FROM 'Questions'");
         int max = findMax.executeQuery().getInt("id");
 
 
@@ -98,7 +101,7 @@ public class StudentMainFrame {
                 // System.out.println(rnd);
                 questions.add(rnd);
                 k++;
-                PreparedStatement preparedStatement = conn.prepareStatement("SELECT Question,`Right` FROM QuestionList WHERE id = ?");
+                PreparedStatement preparedStatement = conn.prepareStatement("SELECT Question,`Right` FROM 'Questions' WHERE id = ?");
                 preparedStatement.setInt(1, rnd);
                 faq.add(preparedStatement.executeQuery().getInt("Right"));
                 return preparedStatement.executeQuery().getString("Question");

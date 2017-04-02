@@ -30,6 +30,8 @@ public class TeacherMainFrame extends conn {
 
     public TeacherMainFrame() throws SQLException, ClassNotFoundException {
         ConnObj = new conn();
+        ConnObj.Conn();
+        ConnObj.CreateDB();
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -57,11 +59,13 @@ public class TeacherMainFrame extends conn {
                 });
 
                 JFrame DashboardFrame = new JFrame(Const.PROGRAM_NAME);
+                DashboardFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 DashboardFrame.add(panel1);
-                DashboardFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 DashboardFrame.setSize(800, 800);
                 DashboardFrame.setVisible(true);
                 DashboardFrame.setLocationRelativeTo(null);
+                Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
+                DashboardFrame.setIconImage(img);
 
                 doAddNewQuest.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
@@ -113,7 +117,7 @@ public class TeacherMainFrame extends conn {
     private DefaultTableModel Update_table() throws SQLException, ClassNotFoundException {
         connection = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
 
-        preparedStatement = connection.prepareStatement("SELECT * FROM QuestionList");
+        preparedStatement = connection.prepareStatement("SELECT * FROM 'Questions'");
         resultSet = preparedStatement.executeQuery();
 
         defaultTableModel = new DefaultTableModel();
