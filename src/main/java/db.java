@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class db {
     public static mainFrame guiframe;
 
-
+    //старт программы
     public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
        guiframe = new mainFrame();
     }
