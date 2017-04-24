@@ -11,7 +11,7 @@ public class Db_Test {
         Connection connection = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
         PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Questions (id, Question, Ans1, Ans2, Ans3, Ans4, Right) VALUES (?,?,?,?,?,?,?)");
 
-        for(int i=10; i < 25; i++) {
+        for(int i=2; i < 25; i++) {
             preparedStatement.setInt(1,i);
             preparedStatement.setString(2,"12354");
             preparedStatement.setString(3,"12354");
