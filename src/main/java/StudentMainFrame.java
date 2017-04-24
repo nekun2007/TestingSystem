@@ -127,7 +127,7 @@ public class StudentMainFrame {
             }
         }
 
-        fr.textArea1.append("Ваш результат " + Const.RESULT + " из 20\n");
+        fr.textArea1.append("Ваш оценка " + result() + " \n");
         System.out.println(rightAnswers.size());
         if (rightAnswers.size() > 0) {
             fr.textArea1.append("\n");
@@ -149,5 +149,23 @@ public class StudentMainFrame {
 
         fr.showFinishResult();
         studentFrame.dispose();
+    }
+
+    private int result() {
+        switch (Const.RESULT) {
+            case 14:
+            case 15: return 3;
+
+            case 16:
+            case 17: return 4;
+
+            case 18:
+            case 19:
+            case 20: return 5;
+
+            default: return 2;
+
+
+        }
     }
 }
