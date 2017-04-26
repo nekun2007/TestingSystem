@@ -29,7 +29,7 @@ public class StudentMainFrame {
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         JPanel[] panels = new JPanel[20];
         groups = new ButtonGroup[20];
-        JScrollPane jScrollPane1 = new JScrollPane(container, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane jScrollPane1 = new JScrollPane(container, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         for (int i = 0; i < 20; i++) {
             panels[i] = new JPanel();
             labels[i] = new JLabel((i + 1) + ". " + getQuestion());
@@ -62,7 +62,9 @@ public class StudentMainFrame {
         studentFrame.getContentPane().add(jScrollPane1);
         studentFrame.add(answ, BorderLayout.SOUTH);
         studentFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        studentFrame.setSize(800, 800);
+        studentFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        studentFrame.setUndecorated(true);
+        //studentFrame.setSize(800, 800);
         studentFrame.setVisible(true);
         studentFrame.setLocationRelativeTo(null);
         Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
@@ -149,5 +151,7 @@ public class StudentMainFrame {
 
         fr.showFinishResult();
         studentFrame.dispose();
+
+
     }
 }

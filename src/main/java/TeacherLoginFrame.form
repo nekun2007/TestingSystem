@@ -22,7 +22,7 @@
         </constraints>
         <properties>
           <font name="Times New Roman" size="20"/>
-          <text value="ВХОД"/>
+          <text value="Введите пароль:"/>
         </properties>
       </component>
       <component id="989df" class="javax.swing.JButton" binding="doLogIn">

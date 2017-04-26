@@ -6,4 +6,6 @@ public class Const {
     public static final String PROGRAM_NAME = "Система тестирования";
     public static int ANSWER_ID = 0;
     public static int RESULT = 0;
+
+    public static  String LINK = "jdbc:sqlite:Questions.s3db";
 }

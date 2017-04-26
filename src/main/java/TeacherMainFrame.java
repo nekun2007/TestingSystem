@@ -21,8 +21,10 @@ public class TeacherMainFrame extends conn {
     private JButton doRemoveQuest;
     private JPanel panel1;
     private JScrollPane scrollPane1;
+    private JButton doChangeQuestion;
     private DefaultTableModel defaultTableModel;
     private conn ConnObj;
+    JFrame DashboardFrame = new JFrame(Const.PROGRAM_NAME);
 
     private Connection connection;
     private ResultSet resultSet;
@@ -58,7 +60,7 @@ public class TeacherMainFrame extends conn {
                     }
                 });
 
-                JFrame DashboardFrame = new JFrame(Const.PROGRAM_NAME);
+
                 DashboardFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 DashboardFrame.add(panel1);
                 DashboardFrame.setSize(800, 800);
@@ -66,6 +68,12 @@ public class TeacherMainFrame extends conn {
                 DashboardFrame.setLocationRelativeTo(null);
                 Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
                 DashboardFrame.setIconImage(img);
+
+                doChangeQuestion.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+
+                    }
+                });
 
                 doAddNewQuest.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
@@ -102,8 +110,19 @@ public class TeacherMainFrame extends conn {
             }
 
         });
-
-
+        doChangeQuestion.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                ChangeQuestion changeQuestion = new ChangeQuestion();
+                changeQuestion.id = Integer.parseInt(table1.getValueAt(table1.getSelectedRow(),0).toString());
+                changeQuestion.questionField.setText(table1.getValueAt(table1.getSelectedRow(),1).toString());
+                changeQuestion.answerFirstField.setText(table1.getValueAt(table1.getSelectedRow(),2).toString());
+                changeQuestion.answerSecondField.setText(table1.getValueAt(table1.getSelectedRow(),3).toString());
+                changeQuestion.answerThirdField.setText(table1.getValueAt(table1.getSelectedRow(),4).toString());
+                changeQuestion.answerFourthField.setText(table1.getValueAt(table1.getSelectedRow(),5).toString());
+                changeQuestion.rightAnswerBox.setSelectedIndex(Integer.parseInt(table1.getValueAt(table1.getSelectedRow(),6).toString())-1);
+                DashboardFrame.dispose();
+            }
+        });
 
 
 
