@@ -28,6 +28,8 @@ public class mainFrame extends JFrame {
         mainFrameGUI.setIconImage(img);
         doTeacherFrame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                Object right_answ=JOptionPane.showInputDialog(null,"Введите вопрос", "Добавление правильного ответа",JOptionPane.PLAIN_MESSAGE, null,new Object[] {"ОГП", "Строевая подготовка", "Огневая подготовка", "ВСП+ТСП", "Тактическая подготовка"}, null);
+                switch ()
                 new TeacherLoginFrame();
                 closeFrame();
             }

@@ -17,7 +17,7 @@ public class conn {
     public ResultSet resSet;
     static int max = 0;
     static int flag = 0;
-
+    public String tableName;
     public conn() {
     }
 
