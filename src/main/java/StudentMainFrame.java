@@ -78,16 +78,15 @@ public class StudentMainFrame {
         Class.forName("org.sqlite.JDBC");
         conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
 
-        Statement statement = conn.createStatement();
-        statement.execute(String.format("SELECT Ans1,Ans2,Ans3,Ans4 FROM %s WHERE id = %d", mainFrame.tableName, questions.get(questID)));
+        //Statement statement = conn.createStatement();
+        //statement.execute(String.format("SELECT Ans1,Ans2,Ans3,Ans4 FROM %s WHERE id = %d", mainFrame.tableName, questions.get(questID)));
 
-        /*PreparedStatement preparedStmt = conn.prepareStatement("SELECT Ans1,Ans2,Ans3,Ans4 FROM ? WHERE id = ?");
-        preparedStmt.setString(1, mainFrame.tableName);
-        preparedStmt.setInt(2, questions.get(questID));*/
+        PreparedStatement preparedStmt = conn.prepareStatement("SELECT Ans1,Ans2,Ans3,Ans4 FROM " + Const.SUBJECT + " WHERE id = ?");
+        preparedStmt.setInt(1, questions.get(questID));
 
 
-        res = statement.executeQuery(String.format("SELECT %s FROM %s WHERE id = %d","Ans" + (Const.ANSWER_ID + 1), mainFrame.tableName, questions.get(questID) )).getString("Ans" + (Const.ANSWER_ID + 1));
-        //res = preparedStmt.executeQuery().getString("Ans" + (Const.ANSWER_ID + 1));
+        //res = statement.executeQuery(String.format("SELECT %s FROM %s WHERE id = %d","Ans" + (Const.ANSWER_ID + 1), Const.SUBJECT, questions.get(questID) )).getString("Ans" + (Const.ANSWER_ID + 1));
+        res = preparedStmt.executeQuery().getString("Ans" + (Const.ANSWER_ID + 1));
         Const.ANSWER_ID += 1;
         return res;
     }
@@ -98,12 +97,8 @@ public class StudentMainFrame {
         conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
 
 
-        /*PreparedStatement findMax = conn.prepareStatement(String.format("SELECT MAX(id) as id FROM '%s'", mainFrame.tableName));
-        findMax.setString(1, mainFrame.tableName);
-        System.out.println(mainFrame.tableName);
-        int max = findMax.executeQuery().getInt("id");*/
-        Statement findMax = conn.createStatement();
-        int max = findMax.executeQuery(String.format("SELECT MAX(id) as id FROM '%s'", mainFrame.tableName)).getInt("id");
+        PreparedStatement findMax = conn.prepareStatement("SELECT MAX(id) as id FROM " +  Const.SUBJECT);
+        int max = findMax.executeQuery().getInt("id");
 
 
         int k = 0;
@@ -114,15 +109,10 @@ public class StudentMainFrame {
                 // System.out.println(rnd);
                 questions.add(rnd);
                 k++;
-                /*PreparedStatement preparedStatement = conn.prepareStatement("SELECT Question,`Right` FROM '?' WHERE id = ?");
-                preparedStatement.setString(1, mainFrame.tableName);
-                preparedStatement.setInt(2, rnd);
+                PreparedStatement preparedStatement = conn.prepareStatement("SELECT Question,`Right` FROM "+ Const.SUBJECT + " WHERE id = ?");
+                preparedStatement.setInt(1, rnd);
                 faq.add(preparedStatement.executeQuery().getInt("Right"));
-                return preparedStatement.executeQuery().getString("Question");*/
-                Statement stmnt = conn.createStatement();
-                stmnt.execute(String.format("SELECT Question,`Right` FROM '%s' WHERE id = %d",mainFrame.tableName, rnd ));
-                faq.add(stmnt.executeQuery(String.format("SELECT`Right` FROM '%s' WHERE id = %d",mainFrame.tableName, rnd )).getInt("Right"));
-                return stmnt.executeQuery(String.format("SELECT Question FROM '%s' WHERE id = %d",mainFrame.tableName, rnd )).getString("Question");
+                return preparedStatement.executeQuery().getString("Question");
             }
         }
 
