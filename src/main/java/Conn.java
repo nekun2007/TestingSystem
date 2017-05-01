@@ -47,9 +47,9 @@ public class Conn {
             if(max == 0 && flag == 0) {
                // System.out.println("Таблица пуста");
             } else {
-                max = statmt.executeQuery(String.format("SELECT MAX(id) AS id FROM '%s'", mainFrame.tableName)).getInt("id");
+                max = statmt.executeQuery(String.format("SELECT MAX(id) AS id FROM '%s'", Const.SUBJECT)).getInt("id");
             }
-            statmt.execute(String.format("INSERT INTO '%s' ('id', 'Question', 'Ans1', 'Ans2', 'Ans3', 'Ans4', 'Right') VALUES ('%d', '%s', '%s','%s','%s','%s', %d); ", mainFrame.tableName, max + 1, que, ans1, ans2, ans3, ans4, right));
+            statmt.execute(String.format("INSERT INTO '%s' ('id', 'Question', 'Ans1', 'Ans2', 'Ans3', 'Ans4', 'Right') VALUES ('%d', '%s', '%s','%s','%s','%s', %d); ", Const.SUBJECT, max + 1, que, ans1, ans2, ans3, ans4, right));
             System.out.println("Вопрос добавлен");
 
 
@@ -83,13 +83,13 @@ public class Conn {
         Class.forName("org.sqlite.JDBC");
         conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
         statmt = conn.createStatement();
-        resSet = statmt.executeQuery(String.format("SELECT * FROM '%s'", mainFrame.tableName));
+        resSet = statmt.executeQuery(String.format("SELECT * FROM '%s'", Const.SUBJECT));
         statmt.executeUpdate(String.format("", new Object[0]));
-        statmt.execute(String.format("DELETE FROM `%s` WHERE `id`='%d'", mainFrame.tableName,id));
-        int maxId = statmt.executeQuery(String.format("SELECT MAX(id) AS id FROM '%s';", mainFrame.tableName)).getInt("id");
+        statmt.execute(String.format("DELETE FROM `%s` WHERE `id`='%d'", Const.SUBJECT,id));
+        int maxId = statmt.executeQuery(String.format("SELECT MAX(id) AS id FROM '%s';", Const.SUBJECT)).getInt("id");
 
         for(int i = id + 1; i <= maxId; ++i) {
-            statmt.executeUpdate(String.format("UPDATE '%s' SET id = %d WHERE id=%d",mainFrame.tableName, i - 1, i));
+            statmt.executeUpdate(String.format("UPDATE '%s' SET id = %d WHERE id=%d",Const.SUBJECT, i - 1, i));
         }
         System.out.println("Row is deleted");
         resSet.close();
