@@ -6,14 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da6db78d-df12-482c-a503-c2d72d7261b2" name="Default" comment="fix bugs">
+    <list default="true" id="da6db78d-df12-482c-a503-c2d72d7261b2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StudentMainFrame.class" afterPath="$PROJECT_DIR$/target/classes/StudentMainFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TeacherMainFrame.class" afterPath="$PROJECT_DIR$/target/classes/TeacherMainFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mainFrame.class" afterPath="$PROJECT_DIR$/target/classes/mainFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Questions.s3db" afterPath="$PROJECT_DIR$/Questions.s3db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ChangeQuestion.java" afterPath="$PROJECT_DIR$/src/main/java/ChangeQuestion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/TeacherMainFrame.java" afterPath="$PROJECT_DIR$/src/main/java/TeacherMainFrame.java" />
     </list>
     <ignored path="tester.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -881,7 +878,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493669364061</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fix bugs">
+      <created>1493681556118</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1493681556118</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
