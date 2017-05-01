@@ -3,6 +3,8 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -24,6 +26,8 @@ public class TeacherMainFrame extends Conn {
     private Connection connection;
     private ResultSet resultSet;
     private PreparedStatement preparedStatement;
+
+
 
     public TeacherMainFrame() throws SQLException, ClassNotFoundException {
         ConnObj = new Conn();
@@ -61,8 +65,16 @@ public class TeacherMainFrame extends Conn {
                 DashboardFrame.setSize(800, 800);
                 DashboardFrame.setVisible(true);
                 DashboardFrame.setLocationRelativeTo(null);
+                DashboardFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                 Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
                 DashboardFrame.setIconImage(img);
+
+                DashboardFrame.addWindowListener(new WindowAdapter() {
+                    @Override
+                    public void windowClosing(WindowEvent e) {
+                        new mainFrame();
+                    }
+                });
 
                 doAddNewQuest.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
@@ -102,15 +114,22 @@ public class TeacherMainFrame extends Conn {
         });
         doChangeQuestion.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                ChangeQuestion changeQuestion = new ChangeQuestion();
-                changeQuestion.id = Integer.parseInt(table1.getValueAt(table1.getSelectedRow(),0).toString());
-                changeQuestion.questionField.setText(table1.getValueAt(table1.getSelectedRow(),1).toString());
-                changeQuestion.answerFirstField.setText(table1.getValueAt(table1.getSelectedRow(),2).toString());
-                changeQuestion.answerSecondField.setText(table1.getValueAt(table1.getSelectedRow(),3).toString());
-                changeQuestion.answerThirdField.setText(table1.getValueAt(table1.getSelectedRow(),4).toString());
-                changeQuestion.answerFourthField.setText(table1.getValueAt(table1.getSelectedRow(),5).toString());
-                changeQuestion.rightAnswerBox.setSelectedIndex(Integer.parseInt(table1.getValueAt(table1.getSelectedRow(),6).toString())-1);
-                DashboardFrame.dispose();
+
+                if (table1.getSelectedRow()<0 || table1.getSelectedRow()>table1.getRowCount()) {
+                    JOptionPane.showMessageDialog(null, "Вопрос не выбрали вопрос!", "Невозможно изменить вопрос!",JOptionPane.PLAIN_MESSAGE);
+                }
+                 else {
+                    ChangeQuestion changeQuestion = new ChangeQuestion();
+                    changeQuestion.id = Integer.parseInt(table1.getValueAt(table1.getSelectedRow(), 0).toString());
+                    changeQuestion.questionField.setText(table1.getValueAt(table1.getSelectedRow(), 1).toString());
+                    changeQuestion.answerFirstField.setText(table1.getValueAt(table1.getSelectedRow(), 2).toString());
+                    changeQuestion.answerSecondField.setText(table1.getValueAt(table1.getSelectedRow(), 3).toString());
+                    changeQuestion.answerThirdField.setText(table1.getValueAt(table1.getSelectedRow(), 4).toString());
+                    changeQuestion.answerFourthField.setText(table1.getValueAt(table1.getSelectedRow(), 5).toString());
+                    changeQuestion.rightAnswerBox.setSelectedIndex(Integer.parseInt(table1.getValueAt(table1.getSelectedRow(), 6).toString()) - 1);
+                    DashboardFrame.dispose();
+                }
+
             }
         });
 

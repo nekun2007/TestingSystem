@@ -1,6 +1,9 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.sql.*;
 
 /**
@@ -24,6 +27,8 @@ public class ChangeQuestion {
         changeQuestion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         changeQuestion.setSize(800, 800);
         changeQuestion.setVisible(true);
+        Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
+        changeQuestion.setIconImage(img);
         rightAnswerBox.addItem("1");
         rightAnswerBox.addItem("2");
         rightAnswerBox.addItem("3");
@@ -40,6 +45,19 @@ public class ChangeQuestion {
                 } catch (ClassNotFoundException e1) {
                     e1.printStackTrace();
                 }
+            }
+        });
+
+        changeQuestion.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+               try {
+                    new TeacherMainFrame();
+               } catch (SQLException e1) {
+                    e1.printStackTrace();
+               } catch (ClassNotFoundException e1) {
+                    e1.printStackTrace();
+               }
             }
         });
 
