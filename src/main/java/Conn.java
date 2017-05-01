@@ -11,14 +11,14 @@ import java.util.Scanner;
 /**
  * Created by Иван on 14.03.2017.
  */
-public class conn {
+public class Conn {
     public Connection conn;
     public Statement statmt;
     public ResultSet resSet;
     static int max = 0;
     static int flag = 0;
-    public String tableName;
-    public conn() {
+
+    public Conn() {
     }
 
     public void Conn() throws ClassNotFoundException, SQLException {
@@ -31,7 +31,7 @@ public class conn {
     public void CreateDB() throws ClassNotFoundException, SQLException {
         statmt = conn.createStatement();
         flag = 1;
-        statmt.execute("CREATE TABLE if not exists 'Questions' ('id' INTEGER PRIMARY KEY, 'Question' text, 'Ans1' text, 'Ans2' text, 'Ans3' text, 'Ans4' text, 'Right' INTEGER);");
+        //statmt.execute("CREATE TABLE if not exists 'Questions' ('id' INTEGER PRIMARY KEY, 'Question' text, 'Ans1' text, 'Ans2' text, 'Ans3' text, 'Ans4' text, 'Right' INTEGER);");
         System.out.println("Таблица создана или уже существует.");
     }
 
@@ -47,9 +47,9 @@ public class conn {
             if(max == 0 && flag == 0) {
                // System.out.println("Таблица пуста");
             } else {
-                max = statmt.executeQuery("SELECT MAX(id) AS id FROM 'Questions'").getInt("id");
+                max = statmt.executeQuery(String.format("SELECT MAX(id) AS id FROM '%s'", mainFrame.tableName)).getInt("id");
             }
-            statmt.execute(String.format("INSERT INTO 'Questions' ('id', 'Question', 'Ans1', 'Ans2', 'Ans3', 'Ans4', 'Right') VALUES ('%d', '%s', '%s','%s','%s','%s', %d); ", max + 1, que, ans1, ans2, ans3, ans4, right));
+            statmt.execute(String.format("INSERT INTO '%s' ('id', 'Question', 'Ans1', 'Ans2', 'Ans3', 'Ans4', 'Right') VALUES ('%d', '%s', '%s','%s','%s','%s', %d); ", mainFrame.tableName, max + 1, que, ans1, ans2, ans3, ans4, right));
             System.out.println("Вопрос добавлен");
 
 
@@ -57,7 +57,7 @@ public class conn {
 
     public void  ReadDB() throws ClassNotFoundException, SQLException {
         statmt = conn.createStatement();
-        resSet = statmt.executeQuery("SELECT * FROM 'Questions'");
+        resSet = statmt.executeQuery(String.format("SELECT * FROM '%s'", mainFrame.tableName));
 
         while(resSet.next()) {
             int id = resSet.getInt("id");
@@ -83,13 +83,13 @@ public class conn {
         Class.forName("org.sqlite.JDBC");
         conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
         statmt = conn.createStatement();
-        resSet = statmt.executeQuery("SELECT * FROM 'Questions'");
+        resSet = statmt.executeQuery(String.format("SELECT * FROM '%s'", mainFrame.tableName));
         statmt.executeUpdate(String.format("", new Object[0]));
-        statmt.execute(String.format("DELETE FROM `Questions` WHERE `id`='%d'", id));
-        int maxId = statmt.executeQuery("SELECT MAX(id) AS id FROM 'Questions';").getInt("id");
+        statmt.execute(String.format("DELETE FROM `%s` WHERE `id`='%d'", mainFrame.tableName,id));
+        int maxId = statmt.executeQuery(String.format("SELECT MAX(id) AS id FROM '%s';", mainFrame.tableName)).getInt("id");
 
         for(int i = id + 1; i <= maxId; ++i) {
-            statmt.executeUpdate(String.format("UPDATE 'Questions' SET id = %d WHERE id=%d", i - 1, i));
+            statmt.executeUpdate(String.format("UPDATE '%s' SET id = %d WHERE id=%d",mainFrame.tableName, i - 1, i));
         }
         System.out.println("Row is deleted");
         resSet.close();

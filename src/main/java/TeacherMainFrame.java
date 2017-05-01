@@ -1,8 +1,4 @@
 import javax.swing.*;
-import javax.swing.event.AncestorEvent;
-import javax.swing.event.AncestorListener;
-import javax.swing.event.TableModelEvent;
-import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,12 +6,11 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * Created by Никита on 18.03.2017.
  */
-public class TeacherMainFrame extends conn {
+public class TeacherMainFrame extends Conn {
     private JTable table1;
     private JButton doAddNewQuest;
     private JButton doRemoveQuest;
@@ -23,7 +18,7 @@ public class TeacherMainFrame extends conn {
     private JScrollPane scrollPane1;
     private JButton doChangeQuestion;
     private DefaultTableModel defaultTableModel;
-    private conn ConnObj;
+    private Conn ConnObj;
     JFrame DashboardFrame = new JFrame(Const.PROGRAM_NAME);
 
     private Connection connection;
@@ -31,7 +26,7 @@ public class TeacherMainFrame extends conn {
     private PreparedStatement preparedStatement;
 
     public TeacherMainFrame() throws SQLException, ClassNotFoundException {
-        ConnObj = new conn();
+        ConnObj = new Conn();
         ConnObj.Conn();
         ConnObj.CreateDB();
         SwingUtilities.invokeLater(new Runnable() {
@@ -90,9 +85,10 @@ public class TeacherMainFrame extends conn {
                             answers.add(ans4);
 
                             if ((ans1.length() + ans2.length() + ans3.length() + ans4.length())>0){
-                                Object right_answ=JOptionPane.showInputDialog(null,"Введите вопрос", "Добавление правильного ответа",JOptionPane.PLAIN_MESSAGE, null,answers.toArray(),answers.get(0));
+                                Object right_answ=JOptionPane.showInputDialog(null,"Выберите правильный ответ", "Добавление правильного ответа",JOptionPane.PLAIN_MESSAGE, null,answers.toArray(),answers.get(0));
+
                                 try {
-                                    new conn().WriteDB(question,ans1,ans2,ans3,ans4,answers.indexOf(right_answ)+1);
+                                    new Conn().WriteDB(question,ans1,ans2,ans3,ans4,answers.indexOf(right_answ)+1);
                                     table1.setModel(Update_table());
                                     JOptionPane.showMessageDialog(null,"Новый вопрос добавлен успешно", "Операция выполнена",JOptionPane.INFORMATION_MESSAGE);
                                 } catch (SQLException e1) {
@@ -136,7 +132,7 @@ public class TeacherMainFrame extends conn {
     private DefaultTableModel Update_table() throws SQLException, ClassNotFoundException {
         connection = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
 
-        preparedStatement = connection.prepareStatement("SELECT * FROM 'Questions'");
+        preparedStatement = connection.prepareStatement(String.format("SELECT * FROM '%s'", mainFrame.tableName));
         resultSet = preparedStatement.executeQuery();
 
         defaultTableModel = new DefaultTableModel();
