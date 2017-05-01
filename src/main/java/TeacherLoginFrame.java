@@ -12,8 +12,6 @@ public class TeacherLoginFrame {
     private JButton doExit;
     private JPanel panel1;
     private JTextField logField;
-    private String password;
-    private String login;
 
     public TeacherLoginFrame() {
         final JFrame loginFrame = new JFrame(Const.PROGRAM_NAME);
@@ -42,26 +40,21 @@ public class TeacherLoginFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Connection conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
-                    Statement statmt = conn.createStatement();
-                    password = statmt.executeQuery(String.format("SELECT password FROM Subject WHERE subjName = '%s'", mainFrame.tableName)).getString("password");
-                    login = statmt.executeQuery(String.format("SELECT login FROM Subject WHERE subjName = '%s'", mainFrame.tableName)).getString("login");
-
+                    PreparedStatement preparedStatement = conn.prepareStatement("SELECT login, password FROM Subject WHERE subjName=?");
+                    preparedStatement.setString(1, Const.SUBJECT);
+                    ResultSet resultSet = preparedStatement.executeQuery();
+                    while(resultSet.next()) {
+                        if (resultSet.getString("login").equals(logField.getText()) && resultSet.getString("password").equals(passwordField1.getText())) {
+                            new TeacherMainFrame();
+                            loginFrame.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(null,"Ошибка при вводе логина или пароля");
+                        }
+                    }
                 } catch (SQLException e1) {
                     e1.printStackTrace();
-                }
-
-                //if (!passwordField1.getText().equals(Const.PASSWORD)) {
-                if (!passwordField1.getText().equals(password)||(!logField.getText().equals(login))) {
-                    JOptionPane.showMessageDialog(null,"Неправильный логин/пароль попробуйте снова","Ошибка логина или пароля",JOptionPane.WARNING_MESSAGE);
-                } else {
-                    try {
-                        new TeacherMainFrame();
-                        loginFrame.dispose();
-                    } catch (SQLException e1) {
-                        e1.printStackTrace();
-                    } catch (ClassNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
+                } catch (ClassNotFoundException e1) {
+                    e1.printStackTrace();
                 }
             }
         });

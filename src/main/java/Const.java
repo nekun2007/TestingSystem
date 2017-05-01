@@ -8,4 +8,5 @@ public class Const {
     public static int RESULT = 0;
 
     public static  String LINK = "jdbc:sqlite:Questions.s3db";
+    public static String SUBJECT = "";
 }

@@ -34,19 +34,19 @@ public class mainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String selection_subject=(String) JOptionPane.showInputDialog(null,"Выберете дисциплину","Выбор предмета",JOptionPane.PLAIN_MESSAGE, null, subjArr , null);
                 if (selection_subject.equals(subjArr[0])){
-                    tableName="OGP";
+                    Const.SUBJECT="OGP";
                 }
                 if (selection_subject.equals(subjArr[1])){
-                    tableName="SP";
+                    Const.SUBJECT="SP";
                 }
                 if (selection_subject.equals(subjArr[2])){
-                    tableName="OPodg";
+                    Const.SUBJECT="OPodg";
                 }
                 if (selection_subject.equals(subjArr[3])){
-                    tableName="VSPodg";
+                    Const.SUBJECT="VSPodg";
                 }
                 if (selection_subject.equals(subjArr[4])){
-                    tableName="TactPodg";
+                    Const.SUBJECT="TactPodg";
                 }
                 new TeacherLoginFrame();
                 closeFrame();
@@ -58,19 +58,19 @@ public class mainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String selection_subject=(String) JOptionPane.showInputDialog(null,"Выберете дисциплину","Выбор предмета",JOptionPane.PLAIN_MESSAGE, null, subjArr , null);
                 if (selection_subject.equals(subjArr[0])){
-                    tableName="OGP";
+                    Const.SUBJECT="OGP";
                 }
                 if (selection_subject.equals(subjArr[1])){
-                    tableName="SP";
+                    Const.SUBJECT="SP";
                 }
                 if (selection_subject.equals(subjArr[2])){
-                    tableName="OPodg";
+                    Const.SUBJECT="OPodg";
                 }
                 if (selection_subject.equals(subjArr[3])){
-                    tableName="VSPodg";
+                    Const.SUBJECT="VSPodg";
                 }
                 if (selection_subject.equals(subjArr[4])){
-                    tableName="TactPodg";
+                    Const.SUBJECT="TactPodg";
                 }
                 try {
                     new StudentMainFrame();

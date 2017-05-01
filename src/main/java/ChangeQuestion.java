@@ -60,30 +60,16 @@ public class ChangeQuestion {
 
     private void applyingChanges() throws SQLException {
         Connection connection = DriverManager.getConnection(Const.LINK);
-       /* PreparedStatement preparedStatement = connection.prepareStatement("UPDATE ? SET Question=? , Ans1=?, Ans2=?, Ans3=?, Ans4=?, `Right`=? WHERE id=?");
-        preparedStatement.setString(1, mainFrame.tableName);
-        preparedStatement.setString(2,questionField.getText());
-        preparedStatement.setString(3,answerFirstField.getText());
-        preparedStatement.setString(4,answerSecondField.getText());
-        preparedStatement.setString(5,answerThirdField.getText());
-        preparedStatement.setString(6,answerFourthField.getText());
-        preparedStatement.setInt(7,rightAnswerBox.getSelectedIndex()+1);
-        preparedStatement.setInt(8,id);
-        preparedStatement.executeUpdate();*/
-        Statement statement = connection.createStatement();
-        statement.executeUpdate(String.format("UPDATE %s SET Question=%s , Ans1=%s, Ans2=%s, Ans3=%s, Ans4=%s, `Right`=%d WHERE id=%d",
-                mainFrame.tableName,
-                questionField.getText(),
-                answerFirstField.getText(),
-                answerSecondField.getText(),
-                answerThirdField.getText(),
-                answerFourthField.getText(),
-                rightAnswerBox.getSelectedIndex()+1,
-                id) b
-        );
+        PreparedStatement preparedStatement = connection.prepareStatement("UPDATE "+ Const.SUBJECT + " SET Question=? , Ans1=?, Ans2=?, Ans3=?, Ans4=?, `Right`=? WHERE id=?");
 
-
-
+        preparedStatement.setString(1,questionField.getText());
+        preparedStatement.setString(2,answerFirstField.getText());
+        preparedStatement.setString(3,answerSecondField.getText());
+        preparedStatement.setString(4,answerThirdField.getText());
+        preparedStatement.setString(5,answerFourthField.getText());
+        preparedStatement.setInt(6,rightAnswerBox.getSelectedIndex()+1);
+        preparedStatement.setInt(7,id);
+        preparedStatement.executeUpdate();
     }
 
 

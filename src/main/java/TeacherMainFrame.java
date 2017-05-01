@@ -64,12 +64,6 @@ public class TeacherMainFrame extends Conn {
                 Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
                 DashboardFrame.setIconImage(img);
 
-                doChangeQuestion.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-
-                    }
-                });
-
                 doAddNewQuest.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         String question = JOptionPane.showInputDialog(null,"Введите вопрос", "Добавление нового вопроса",JOptionPane.PLAIN_MESSAGE);
@@ -131,8 +125,7 @@ public class TeacherMainFrame extends Conn {
 
     private DefaultTableModel Update_table() throws SQLException, ClassNotFoundException {
         connection = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
-
-        preparedStatement = connection.prepareStatement(String.format("SELECT * FROM '%s'", mainFrame.tableName));
+        preparedStatement = connection.prepareStatement("SELECT * FROM " + Const.SUBJECT);
         resultSet = preparedStatement.executeQuery();
 
         defaultTableModel = new DefaultTableModel();
