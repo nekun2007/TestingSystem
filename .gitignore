@@ -68,3 +68,5 @@ crashlytics-build.properties
 fabric.properties
 Будет удалено .gitignore
 Будет удалено .idea/dataSources/
+/.idea/
+/target/
