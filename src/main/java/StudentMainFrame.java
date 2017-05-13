@@ -62,7 +62,9 @@ public class StudentMainFrame {
         studentFrame.getContentPane().add(jScrollPane1);
         studentFrame.add(answ, BorderLayout.SOUTH);
         studentFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        studentFrame.setSize(800, 800);
+        studentFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        studentFrame.setUndecorated(true);
+        //studentFrame.setSize(800, 800);
         studentFrame.setVisible(true);
         studentFrame.setLocationRelativeTo(null);
         Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
@@ -75,9 +77,15 @@ public class StudentMainFrame {
         Connection conn = null;
         Class.forName("org.sqlite.JDBC");
         conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
-        PreparedStatement preparedStmt = conn.prepareStatement("SELECT Ans1,Ans2,Ans3,Ans4 FROM Questions WHERE id = ?");
+
+        //Statement statement = conn.createStatement();
+        //statement.execute(String.format("SELECT Ans1,Ans2,Ans3,Ans4 FROM %s WHERE id = %d", mainFrame.tableName, questions.get(questID)));
+
+        PreparedStatement preparedStmt = conn.prepareStatement("SELECT Ans1,Ans2,Ans3,Ans4 FROM " + Const.SUBJECT + " WHERE id = ?");
         preparedStmt.setInt(1, questions.get(questID));
 
+
+        //res = statement.executeQuery(String.format("SELECT %s FROM %s WHERE id = %d","Ans" + (Const.ANSWER_ID + 1), Const.SUBJECT, questions.get(questID) )).getString("Ans" + (Const.ANSWER_ID + 1));
         res = preparedStmt.executeQuery().getString("Ans" + (Const.ANSWER_ID + 1));
         Const.ANSWER_ID += 1;
         return res;
@@ -89,7 +97,7 @@ public class StudentMainFrame {
         conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
 
 
-        PreparedStatement findMax = conn.prepareStatement("SELECT MAX(id) as id FROM 'Questions'");
+        PreparedStatement findMax = conn.prepareStatement("SELECT MAX(id) as id FROM " +  Const.SUBJECT);
         int max = findMax.executeQuery().getInt("id");
 
 
@@ -101,7 +109,7 @@ public class StudentMainFrame {
                 // System.out.println(rnd);
                 questions.add(rnd);
                 k++;
-                PreparedStatement preparedStatement = conn.prepareStatement("SELECT Question,`Right` FROM 'Questions' WHERE id = ?");
+                PreparedStatement preparedStatement = conn.prepareStatement("SELECT Question,`Right` FROM "+ Const.SUBJECT + " WHERE id = ?");
                 preparedStatement.setInt(1, rnd);
                 faq.add(preparedStatement.executeQuery().getInt("Right"));
                 return preparedStatement.executeQuery().getString("Question");
@@ -149,6 +157,8 @@ public class StudentMainFrame {
 
         fr.showFinishResult();
         studentFrame.dispose();
+
+
     }
 
     private int result() {

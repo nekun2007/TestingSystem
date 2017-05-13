@@ -13,11 +13,12 @@ public class FinishResult {
     public void showFinishResult() {
         final JFrame finish = new JFrame("Тест заврешен");
         finish.add(panel1);
-        finish.setSize(700,500);
-        finish.setResizable(false);
+        finish.setUndecorated(true);
+        finish.setSize(800, 800);
         finish.setVisible(true);
         finish.setLocationRelativeTo(null);
-        Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
+        finish.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        Image img = Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
         finish.setIconImage(img);
         finish.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }

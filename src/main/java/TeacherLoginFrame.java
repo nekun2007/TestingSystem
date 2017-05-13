@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  * Created by Никита on 18.03.2017.
@@ -11,6 +11,7 @@ public class TeacherLoginFrame {
     private JButton doLogIn;
     private JButton doExit;
     private JPanel panel1;
+    private JTextField logField;
 
     public TeacherLoginFrame() {
         final JFrame loginFrame = new JFrame(Const.PROGRAM_NAME);
@@ -37,17 +38,23 @@ public class TeacherLoginFrame {
 
         doLogIn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (!passwordField1.getText().equals(Const.PASSWORD)) {
-                    JOptionPane.showMessageDialog(null,"Неправильный логин/пароль попробуйте снова","Ошибка логина или пароля",JOptionPane.WARNING_MESSAGE);
-                } else {
-                    try {
-                        new TeacherMainFrame();
-                        loginFrame.dispose();
-                    } catch (SQLException e1) {
-                        e1.printStackTrace();
-                    } catch (ClassNotFoundException e1) {
-                        e1.printStackTrace();
+                try {
+                    Connection conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
+                    PreparedStatement preparedStatement = conn.prepareStatement("SELECT login, password FROM Subject WHERE subjName=?");
+                    preparedStatement.setString(1, Const.SUBJECT);
+                    ResultSet resultSet = preparedStatement.executeQuery();
+                    while(resultSet.next()) {
+                        if (resultSet.getString("login").equals(logField.getText()) && resultSet.getString("password").equals(passwordField1.getText())) {
+                            new TeacherMainFrame();
+                            loginFrame.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(null,"Ошибка при вводе логина или пароля");
+                        }
                     }
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                } catch (ClassNotFoundException e1) {
+                    e1.printStackTrace();
                 }
             }
         });
