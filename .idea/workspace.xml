@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c36e84f9-0b8e-4ada-a9da-e3091cd9de84" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tets.iml" afterPath="$PROJECT_DIR$/Tets.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/StudentMainFrame.java" afterPath="$PROJECT_DIR$/src/main/java/StudentMainFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -15,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Tets$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1494875649726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Tets$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1494879341879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -74,17 +73,21 @@
       <file leaf-file-name="StudentMainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/StudentMainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="94" column="119" lean-forward="false" selection-start-line="94" selection-start-column="119" selection-end-line="94" selection-end-column="119" />
+            <state relative-caret-position="176">
+              <caret line="104" column="28" lean-forward="false" selection-start-line="104" selection-start-column="28" selection-end-line="104" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3483#3615#0" expanded="true" />
-                <element signature="e#3614#3615#0" expanded="true" />
-                <element signature="e#3831#3978#0" expanded="true" />
-                <element signature="e#3977#3978#0" expanded="true" />
-                <marker date="1494876720037" expanded="true" signature="4520:4586" ph="SELECT Ans1,... missingValue" />
-                <marker date="1494876720037" expanded="true" signature="5278:5304" ph="SELECT MAX(i... missingValue" />
-                <marker date="1494876720037" expanded="true" signature="5747:5809" ph="SELECT Quest... missingValue" />
+                <element signature="e#1837#1966#0" expanded="true" />
+                <element signature="e#1965#1966#0" expanded="true" />
+                <element signature="e#2001#2138#0" expanded="true" />
+                <element signature="e#2137#2138#0" expanded="true" />
+                <element signature="e#3879#4011#0" expanded="true" />
+                <element signature="e#4010#4011#0" expanded="true" />
+                <element signature="e#4233#4419#0" expanded="true" />
+                <element signature="e#4418#4419#0" expanded="true" />
+                <marker date="1494880419638" expanded="true" signature="4961:5027" ph="SELECT Ans1,... missingValue" />
+                <marker date="1494880419638" expanded="true" signature="5719:5745" ph="SELECT MAX(i... missingValue" />
+                <marker date="1494880419638" expanded="true" signature="6188:6250" ph="SELECT Quest... missingValue" />
               </folding>
             </state>
           </provider>
@@ -105,7 +108,22 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Const.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Const.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>answ</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -130,8 +148,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1723" />
-    <option name="y" value="300" />
+    <option name="x" value="100" />
+    <option name="y" value="99" />
     <option name="width" value="1288" />
     <option name="height" value="709" />
   </component>
@@ -689,7 +707,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494867728250</updated>
-      <workItem from="1494867733329" duration="8735000" />
+      <workItem from="1494867733329" duration="12688000" />
     </task>
     <task id="LOCAL-00001" summary="Реакция на enter при авторизации преподавателя">
       <created>1494868957979</created>
@@ -698,14 +716,21 @@
       <option name="project" value="LOCAL" />
       <updated>1494868957988</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Реакция на enter при авторизации преподавателя">
+      <created>1494876753554</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1494876753554</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8735000" />
+    <option name="totallyTimeSpent" value="12688000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1723" y="300" width="1288" height="709" extended-state="0" />
+    <frame x="100" y="99" width="1288" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -717,7 +742,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983872" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -753,7 +778,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="Реакция на enter при авторизации преподавателя" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -803,19 +830,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Const.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/StudentMainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="94" column="119" lean-forward="false" selection-start-line="94" selection-start-column="119" selection-end-line="94" selection-end-column="119" />
+        <state relative-caret-position="176">
+          <caret line="104" column="28" lean-forward="false" selection-start-line="104" selection-start-column="28" selection-end-line="104" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3483#3615#0" expanded="true" />
-            <element signature="e#3614#3615#0" expanded="true" />
-            <element signature="e#3831#3978#0" expanded="true" />
-            <element signature="e#3977#3978#0" expanded="true" />
-            <marker date="1494876720037" expanded="true" signature="4520:4586" ph="SELECT Ans1,... missingValue" />
-            <marker date="1494876720037" expanded="true" signature="5278:5304" ph="SELECT MAX(i... missingValue" />
-            <marker date="1494876720037" expanded="true" signature="5747:5809" ph="SELECT Quest... missingValue" />
+            <element signature="e#1837#1966#0" expanded="true" />
+            <element signature="e#1965#1966#0" expanded="true" />
+            <element signature="e#2001#2138#0" expanded="true" />
+            <element signature="e#2137#2138#0" expanded="true" />
+            <element signature="e#3879#4011#0" expanded="true" />
+            <element signature="e#4010#4011#0" expanded="true" />
+            <element signature="e#4233#4419#0" expanded="true" />
+            <element signature="e#4418#4419#0" expanded="true" />
+            <marker date="1494880419638" expanded="true" signature="4961:5027" ph="SELECT Ans1,... missingValue" />
+            <marker date="1494880419638" expanded="true" signature="5719:5745" ph="SELECT MAX(i... missingValue" />
+            <marker date="1494880419638" expanded="true" signature="6188:6250" ph="SELECT Quest... missingValue" />
           </folding>
         </state>
       </provider>
