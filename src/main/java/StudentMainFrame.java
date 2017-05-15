@@ -1,9 +1,14 @@
+import org.apache.commons.lang3.ArrayUtils;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.sql.*;
 import java.util.*;
+
 
 /**
  * Created by Никита on 18.03.2017.
@@ -13,10 +18,13 @@ public class StudentMainFrame {
     ButtonGroup groups[] = new ButtonGroup[20];
     JRadioButton btn[] = new JRadioButton[80];
     JLabel[] labels = new JLabel[20];
+    JPanel container = new JPanel();
     private ArrayList<Integer> questions = new ArrayList<Integer>();
     private LinkedList<Integer> faq = new LinkedList<Integer>();
     private ArrayList<String> rightAnswers = new ArrayList<String>();
     private ArrayList<String> notRightAnswers = new ArrayList<String>();
+    private int trueans[] = new int[] {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+    int counterr = 0;
    // private ArrayList<String> yourAnswer = new ArrayList<String>();
    // private ArrayList<String> rightAnswer = new ArrayList<String>();
 
@@ -25,7 +33,6 @@ public class StudentMainFrame {
         faq.clear();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         studentFrame = new JFrame(Const.PROGRAM_NAME);
-        JPanel container = new JPanel();
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         JPanel[] panels = new JPanel[20];
         groups = new ButtonGroup[20];
@@ -70,6 +77,27 @@ public class StudentMainFrame {
         Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
         studentFrame.setIconImage(img);
 
+
+
+
+
+
+
+        //Халява
+
+        container.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_X, InputEvent.ALT_MASK),"OPEN");
+        container.getRootPane().getActionMap().put("OPEN", new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+                counterr+=1;
+            }
+        });
+
+        container.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_G, InputEvent.ALT_MASK),"CLOSE");
+        container.getRootPane().getActionMap().put("CLOSE", new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.print("ONE \n");
+            }
+        });
     }
 
     private String generateQuetion(int questID) throws ClassNotFoundException, SQLException {
@@ -177,5 +205,17 @@ public class StudentMainFrame {
 
 
         }
+    }
+
+    private int RandomTrue() {
+        int rnd = new Random().nextInt(trueans.length);
+
+        trueans = ArrayUtils.remove(trueans,rnd);
+
+        return trueans[rnd];
+    }
+
+    private void hot(KeyEvent e) {
+
     }
 }
