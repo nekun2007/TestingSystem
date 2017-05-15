@@ -58,6 +58,32 @@ public class TeacherLoginFrame {
                 }
             }
         });
+
+        Action logIn  = new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Connection conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
+                    PreparedStatement preparedStatement = conn.prepareStatement("SELECT login, password FROM Subject WHERE subjName=?");
+                    preparedStatement.setString(1, Const.SUBJECT);
+                    ResultSet resultSet = preparedStatement.executeQuery();
+                    while(resultSet.next()) {
+                        if (resultSet.getString("login").equals(logField.getText()) && resultSet.getString("password").equals(passwordField1.getText())) {
+                            new TeacherMainFrame();
+                            loginFrame.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(null,"Ошибка при вводе логина или пароля");
+                        }
+                    }
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                } catch (ClassNotFoundException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        };
+
+        panel1.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER,0),"clickButton");
+        panel1.getRootPane().getActionMap().put("clickButton", logIn);
     }
 
     private void createUIComponents() {

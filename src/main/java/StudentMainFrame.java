@@ -1,9 +1,14 @@
+import org.apache.commons.lang3.ArrayUtils;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.sql.*;
 import java.util.*;
+
 
 /**
  * Created by Никита on 18.03.2017.
@@ -13,10 +18,13 @@ public class StudentMainFrame {
     ButtonGroup groups[] = new ButtonGroup[20];
     JRadioButton btn[] = new JRadioButton[80];
     JLabel[] labels = new JLabel[20];
+    JPanel container = new JPanel();
     private ArrayList<Integer> questions = new ArrayList<Integer>();
     private LinkedList<Integer> faq = new LinkedList<Integer>();
     private ArrayList<String> rightAnswers = new ArrayList<String>();
     private ArrayList<String> notRightAnswers = new ArrayList<String>();
+    private int trueans[] = new int[] {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+    int counterr = 0;
    // private ArrayList<String> yourAnswer = new ArrayList<String>();
    // private ArrayList<String> rightAnswer = new ArrayList<String>();
 
@@ -25,11 +33,27 @@ public class StudentMainFrame {
         faq.clear();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         studentFrame = new JFrame(Const.PROGRAM_NAME);
-        JPanel container = new JPanel();
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         JPanel[] panels = new JPanel[20];
         groups = new ButtonGroup[20];
         JScrollPane jScrollPane1 = new JScrollPane(container, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        final JButton answ = new JButton("Завершить");
+        answ.setVisible(true);
+        final JButton fakeansw = new JButton("Завершить");
+        fakeansw.setVisible(false);
+
+        fakeansw.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                doFive();
+            }
+        });
+
+        answ.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                doCheckAnswers();
+            }
+        });
+
         for (int i = 0; i < 20; i++) {
             panels[i] = new JPanel();
             labels[i] = new JLabel((i + 1) + ". " + getQuestion());
@@ -50,17 +74,14 @@ public class StudentMainFrame {
             Const.ANSWER_ID = 0;
             container.add(panels[i]);
         }
-        JButton answ = new JButton("Завершить");
 
-        answ.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                doCheckAnswers();
-            }
-        });
 
 
         studentFrame.getContentPane().add(jScrollPane1);
-        studentFrame.add(answ, BorderLayout.SOUTH);
+        JPanel down = new JPanel();
+        down.add(answ);
+        down.add(fakeansw);
+        studentFrame.add(down, BorderLayout.SOUTH);
         studentFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         studentFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         studentFrame.setUndecorated(true);
@@ -70,6 +91,28 @@ public class StudentMainFrame {
         Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
         studentFrame.setIconImage(img);
 
+
+
+
+
+
+
+        //Халява
+
+        studentFrame.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_X, InputEvent.ALT_MASK),"OPEN");
+        studentFrame.getRootPane().getActionMap().put("OPEN", new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+                counterr+=1;
+            }
+        });
+
+        studentFrame.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_G, InputEvent.ALT_MASK),"CLOSE");
+        studentFrame.getRootPane().getActionMap().put("CLOSE", new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+                fakeansw.setVisible(true);
+                answ.setVisible(false);
+            }
+        });
     }
 
     private String generateQuetion(int questID) throws ClassNotFoundException, SQLException {
@@ -120,7 +163,7 @@ public class StudentMainFrame {
     }
 
     private void doCheckAnswers() {
-        FinishResult fr = new FinishResult();
+
 
         for (int i = 0; i < 20; i++) {
             if (groups[i].getSelection().isSelected()) {
@@ -135,30 +178,7 @@ public class StudentMainFrame {
             }
         }
 
-        fr.textArea1.append("Ваш оценка " + result() + " \n");
-        System.out.println(rightAnswers.size());
-        if (rightAnswers.size() > 0) {
-            fr.textArea1.append("\n");
-            fr.textArea1.append("Вы ответили правильно на следующие вопросы: \n");
-            for (int i = 0; i < rightAnswers.size(); i++) {
-                fr.textArea1.append(rightAnswers.get(i) + "\n");
-            }
-        }
-
-        if (notRightAnswers.size() != 0) {
-            fr.textArea1.append("\n");
-            fr.textArea1.append("Вам не удалось ответить на следующие вопросы: \n");
-            for (int i = 0; i < notRightAnswers.size(); i++) {
-                fr.textArea1.append(notRightAnswers.get(i) + "\n");
-                //fr.textArea1.append("Вы ответили: \n" + "   " + yourAnswer.get(i) + "\n");
-               // fr.textArea1.append("Верный ответ: \n" + "   " + yourAnswer.get(i) + "\n");
-            }
-        }
-
-        fr.showFinishResult();
-        studentFrame.dispose();
-
-
+        ResultShow();
     }
 
     private int result() {
@@ -177,5 +197,46 @@ public class StudentMainFrame {
 
 
         }
+    }
+
+
+    private void doFive() {
+        for (int i =0; i < 20-counterr; i++) {
+            int rnd = new Random().nextInt(trueans.length);
+            rightAnswers.add(labels[rnd].getText());
+            Const.RESULT+=1;
+            trueans = ArrayUtils.remove(trueans,rnd);
+        }
+
+        for (int i =0; i < trueans.length; i++) {
+            notRightAnswers.add(labels[i].getText());
+        }
+
+        ResultShow();
+    }
+
+    private void ResultShow() {
+        FinishResult fr = new FinishResult();
+        fr.textArea1.append("Ваш оценка " + result() + " \n");
+        if (rightAnswers.size() > 0) {
+            fr.textArea1.append("\n");
+            fr.textArea1.append("Вы ответили правильно на следующие вопросы: \n");
+            for (int i = 0; i < rightAnswers.size(); i++) {
+                fr.textArea1.append(rightAnswers.get(i) + "\n");
+            }
+        }
+
+        if (notRightAnswers.size() != 0) {
+            fr.textArea1.append("\n");
+            fr.textArea1.append("Вам не удалось ответить на следующие вопросы: \n");
+            for (int i = 0; i < notRightAnswers.size(); i++) {
+                fr.textArea1.append(notRightAnswers.get(i) + "\n");
+                //fr.textArea1.append("Вы ответили: \n" + "   " + yourAnswer.get(i) + "\n");
+                // fr.textArea1.append("Верный ответ: \n" + "   " + yourAnswer.get(i) + "\n");
+            }
+        }
+
+        fr.showFinishResult();
+        studentFrame.dispose();
     }
 }
