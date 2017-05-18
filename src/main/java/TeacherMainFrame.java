@@ -114,7 +114,7 @@ public class TeacherMainFrame extends Conn {
             }
         });
 
-
+        DashboardFrame.setJMenuBar(MainMenu());
 
     }
 
@@ -151,5 +151,31 @@ public class TeacherMainFrame extends Conn {
         }
 
         return defaultTableModel;
+    }
+
+    private JMenuBar MainMenu() {
+        JMenuBar bar  = new JMenuBar();
+
+        JMenu fileSec = new JMenu("Файл");
+        JMenu testSec = new JMenu("Тест");
+
+        JMenuItem exitItem = new JMenuItem("Выход");
+        JMenuItem printTest = new JMenuItem("Печатный тест");
+
+        fileSec.add(exitItem);
+        testSec.add(printTest);
+
+        printTest.addActionListener(new printTest());
+
+        exitItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+        bar.add(fileSec);
+        bar.add(testSec);
+
+        return bar;
     }
 }

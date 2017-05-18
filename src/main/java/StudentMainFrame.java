@@ -20,7 +20,7 @@ public class StudentMainFrame {
     JLabel[] labels = new JLabel[20];
     JPanel container = new JPanel();
     private ArrayList<Integer> questions = new ArrayList<Integer>();
-    private LinkedList<Integer> faq = new LinkedList<Integer>();
+    public LinkedList<Integer> faq = new LinkedList<Integer>();
     private ArrayList<String> rightAnswers = new ArrayList<String>();
     private ArrayList<String> notRightAnswers = new ArrayList<String>();
     private int trueans[] = new int[] {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
@@ -28,7 +28,7 @@ public class StudentMainFrame {
    // private ArrayList<String> yourAnswer = new ArrayList<String>();
    // private ArrayList<String> rightAnswer = new ArrayList<String>();
 
-    public StudentMainFrame() throws SQLException, ClassNotFoundException {
+    public void startTest() throws SQLException, ClassNotFoundException {
         questions.clear();
         faq.clear();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -85,7 +85,6 @@ public class StudentMainFrame {
         studentFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         studentFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         studentFrame.setUndecorated(true);
-        //studentFrame.setSize(800, 800);
         studentFrame.setVisible(true);
         studentFrame.setLocationRelativeTo(null);
         Image img= Toolkit.getDefaultToolkit().getImage("src/main/java/flag.png");
@@ -115,26 +114,23 @@ public class StudentMainFrame {
         });
     }
 
-    private String generateQuetion(int questID) throws ClassNotFoundException, SQLException {
+    public String generateQuetion(int questID) throws ClassNotFoundException, SQLException {
         String res = null;
         Connection conn = null;
         Class.forName("org.sqlite.JDBC");
         conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
 
-        //Statement statement = conn.createStatement();
-        //statement.execute(String.format("SELECT Ans1,Ans2,Ans3,Ans4 FROM %s WHERE id = %d", mainFrame.tableName, questions.get(questID)));
 
         PreparedStatement preparedStmt = conn.prepareStatement("SELECT Ans1,Ans2,Ans3,Ans4 FROM " + Const.SUBJECT + " WHERE id = ?");
         preparedStmt.setInt(1, questions.get(questID));
 
 
-        //res = statement.executeQuery(String.format("SELECT %s FROM %s WHERE id = %d","Ans" + (Const.ANSWER_ID + 1), Const.SUBJECT, questions.get(questID) )).getString("Ans" + (Const.ANSWER_ID + 1));
         res = preparedStmt.executeQuery().getString("Ans" + (Const.ANSWER_ID + 1));
         Const.ANSWER_ID += 1;
         return res;
     }
 
-    private String getQuestion() throws ClassNotFoundException, SQLException {
+    public String getQuestion() throws ClassNotFoundException, SQLException {
         Connection conn = null;
         Class.forName("org.sqlite.JDBC");
         conn = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
@@ -172,8 +168,6 @@ public class StudentMainFrame {
                     rightAnswers.add(labels[i].getText());
                 } else {
                     notRightAnswers.add(labels[i].getText());
-                    //yourAnswer.add(groups[i].getSelection().getActionCommand());
-                    //rightAnswer.add(String.valueOf(faq.get(i)));
                 }
             }
         }
@@ -231,8 +225,6 @@ public class StudentMainFrame {
             fr.textArea1.append("Вам не удалось ответить на следующие вопросы: \n");
             for (int i = 0; i < notRightAnswers.size(); i++) {
                 fr.textArea1.append(notRightAnswers.get(i) + "\n");
-                //fr.textArea1.append("Вы ответили: \n" + "   " + yourAnswer.get(i) + "\n");
-                // fr.textArea1.append("Верный ответ: \n" + "   " + yourAnswer.get(i) + "\n");
             }
         }
 

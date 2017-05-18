@@ -73,7 +73,7 @@ public class mainFrame extends JFrame {
                     Const.SUBJECT="TactPodg";
                 }
                 try {
-                    new StudentMainFrame();
+                    new StudentMainFrame().startTest();
                 } catch (SQLException e1) {
                     e1.printStackTrace();
                 } catch (ClassNotFoundException e1) {
