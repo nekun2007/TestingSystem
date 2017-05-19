@@ -25,9 +25,12 @@ public class StudentMainFrame {
     private ArrayList<String> notRightAnswers = new ArrayList<String>();
     private int trueans[] = new int[] {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
     int counterr = 0;
-   // private ArrayList<String> yourAnswer = new ArrayList<String>();
-   // private ArrayList<String> rightAnswer = new ArrayList<String>();
 
+    /**
+     * С
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public void startTest() throws SQLException, ClassNotFoundException {
         questions.clear();
         faq.clear();
@@ -114,6 +117,12 @@ public class StudentMainFrame {
         });
     }
 
+    /**
+     * @param questID - номер вопроса (от 1 до 20) 
+     * @return
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     */
     public String generateQuetion(int questID) throws ClassNotFoundException, SQLException {
         String res = null;
         Connection conn = null;

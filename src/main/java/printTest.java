@@ -1,12 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Random;
 
 /**
  * Created by exluap on 18.05.17.
@@ -31,12 +25,8 @@ public class printTest implements ActionListener {
             for (int j =0; j < 4; j++) {
                 System.out.print(alphabet[j] + studentMainFrame.generateQuetion(i) + "\n");
             }
-            System.out.print("Верный ответ: " + alphabet[studentMainFrame.faq.get(i)] + "\n");
+            System.out.print("Верный ответ: " + studentMainFrame.faq.get(i) + "\n");
             Const.ANSWER_ID = 0;
         }
     }
-
-
-
-
 }
