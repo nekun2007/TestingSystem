@@ -19,6 +19,11 @@ public class printTest implements ActionListener {
         }
     }
 
+    /**
+     * Генерация теста
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     private void GenerateTest() throws SQLException, ClassNotFoundException {
         for (int i=0; i < 20; i++) {
             System.out.println((i+1) + ". " + studentMainFrame.getQuestion());

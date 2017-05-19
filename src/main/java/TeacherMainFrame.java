@@ -123,6 +123,12 @@ public class TeacherMainFrame extends Conn {
         // TODO: place custom component creation code here
     }
 
+    /**
+     * Функция отвечающая за изменение данных в локальной таблице
+     * @return возврщает массив элементов для таблицы
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     private DefaultTableModel Update_table() throws SQLException, ClassNotFoundException {
         connection = DriverManager.getConnection("jdbc:sqlite:Questions.s3db");
         preparedStatement = connection.prepareStatement("SELECT * FROM " + Const.SUBJECT);
@@ -153,6 +159,10 @@ public class TeacherMainFrame extends Conn {
         return defaultTableModel;
     }
 
+    /**
+     * Пришлось делать меню. Класс отвечающий за меню с функционалом
+     * @return меню
+     */
     private JMenuBar MainMenu() {
         JMenuBar bar  = new JMenuBar();
 

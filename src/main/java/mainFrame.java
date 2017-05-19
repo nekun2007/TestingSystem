@@ -17,6 +17,9 @@ public class mainFrame extends JFrame {
     public JFrame mainFrameGUI;
     public static String tableName;
 
+    /**
+     * Я вообще хз что тут происходит. Тут были руки Ивана и поэтому мне страшно комментировать
+     */
     public mainFrame() {
         mainFrameGUI = new JFrame("Система тестирования");
         mainFrameGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

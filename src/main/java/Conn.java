@@ -21,6 +21,11 @@ public class Conn {
     public Conn() {
     }
 
+    /**
+     * Функция подключения к базе данных
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     */
     public void Conn() throws ClassNotFoundException, SQLException {
         conn = null;
         Class.forName("org.sqlite.JDBC");
@@ -28,6 +33,11 @@ public class Conn {
         System.out.println("База Подключена!");
     }
 
+    /**
+     * Функция создания таблицы в базе данных
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     */
     public void CreateDB() throws ClassNotFoundException, SQLException {
         statmt = conn.createStatement();
         flag = 1;
@@ -35,6 +45,18 @@ public class Conn {
         System.out.println("Таблица создана или уже существует.");
     }
 
+    /**
+     * Добавление в базу данных вопрос
+     * @param que - переменная отвечающая за текст вопроса
+     * @param ans1 - 1 вариант ответа
+     * @param ans2 - 2 вариант ответа
+     * @param ans3 - 3 вариант ответа
+     * @param ans4 - 4 вариант ответа
+     * @param right - правильный вариант ответа
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public void WriteDB(String que, String ans1, String ans2, String ans3, String ans4, int right) throws SQLException, IOException, ClassNotFoundException {
         conn = null;
         Class.forName("org.sqlite.JDBC");
@@ -55,29 +77,12 @@ public class Conn {
 
     }
 
-    public void  ReadDB() throws ClassNotFoundException, SQLException {
-        statmt = conn.createStatement();
-        resSet = statmt.executeQuery(String.format("SELECT * FROM '%s'", mainFrame.tableName));
-
-        while(resSet.next()) {
-            int id = resSet.getInt("id");
-            String question = resSet.getString("Question");
-            String Ans1 = resSet.getString("Ans1");
-            String Ans2 = resSet.getString("Ans2");
-            String Ans3 = resSet.getString("Ans3");
-            String Ans4 = resSet.getString("Ans4");
-            System.out.print(id + ". ");
-            System.out.println(question);
-            System.out.println(" а. " + Ans1);
-            System.out.println(" б. " + Ans2);
-            System.out.println(" в. " + Ans3);
-            System.out.println(" г. " + Ans4);
-            System.out.println();
-        }
-
-        System.out.println("Таблица выведена");
-    }
-
+    /**
+     * Удаление вопроса из базы и сортировка номера вопроса
+     * @param id - номер вопроса в базе данных
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public void DeleteQuest(int id) throws SQLException, ClassNotFoundException {
         conn = null;
         Class.forName("org.sqlite.JDBC");
@@ -93,12 +98,5 @@ public class Conn {
         }
         System.out.println("Row is deleted");
         resSet.close();
-    }
-
-    public void CloseDB() throws ClassNotFoundException, SQLException {
-        statmt.close();
-        resSet.close();
-        conn.close();
-        System.out.println("Соединения закрыты");
     }
 }

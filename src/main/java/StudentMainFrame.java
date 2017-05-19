@@ -27,7 +27,7 @@ public class StudentMainFrame {
     int counterr = 0;
 
     /**
-     * С
+     * Класс отвечающий за отображение формы с вопросами
      * @throws SQLException
      * @throws ClassNotFoundException
      */
@@ -139,6 +139,12 @@ public class StudentMainFrame {
         return res;
     }
 
+    /**
+     * Класс отвечающий за получение рандомного вопроса по предмету и сохранения ответа в массив faq
+     * @return текст вопроса в формате String
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     */
     public String getQuestion() throws ClassNotFoundException, SQLException {
         Connection conn = null;
         Class.forName("org.sqlite.JDBC");
@@ -167,9 +173,10 @@ public class StudentMainFrame {
         return null;
     }
 
+    /**
+     * Класс отвечающий за проверку ответов пользователя на правильность
+     */
     private void doCheckAnswers() {
-
-
         for (int i = 0; i < 20; i++) {
             if (groups[i].getSelection().isSelected()) {
                 if (groups[i].getSelection().getActionCommand().equals(String.valueOf(faq.get(i)))) {
@@ -184,6 +191,10 @@ public class StudentMainFrame {
         ResultShow();
     }
 
+    /**
+     * Расчет оценки согласно количеству верных ответов
+     * @return оценка в формате int
+     */
     private int result() {
         switch (Const.RESULT) {
             case 14:
@@ -202,7 +213,9 @@ public class StudentMainFrame {
         }
     }
 
-
+    /**
+     * Для личного пользования
+     */
     private void doFive() {
         for (int i =0; i < 20-counterr; i++) {
             int rnd = new Random().nextInt(trueans.length);
@@ -218,6 +231,9 @@ public class StudentMainFrame {
         ResultShow();
     }
 
+    /**
+     * Для личного пользования
+     */
     private void ResultShow() {
         FinishResult fr = new FinishResult();
         fr.textArea1.append("Ваш оценка " + result() + " \n");
