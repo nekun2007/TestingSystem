@@ -58,6 +58,10 @@ public class ChangeQuestion {
 
     }
 
+    /**
+     * Применение изменений вопроса
+     * @throws SQLException
+     */
     private void applyingChanges() throws SQLException {
         Connection connection = DriverManager.getConnection(Const.LINK);
         PreparedStatement preparedStatement = connection.prepareStatement("UPDATE "+ Const.SUBJECT + " SET Question=? , Ans1=?, Ans2=?, Ans3=?, Ans4=?, `Right`=? WHERE id=?");
