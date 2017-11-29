@@ -75,8 +75,9 @@ if __name__ == "__main__":
     with sqlite3.connect(db_file) as conn:
         c = conn.cursor()
 
-        query = "DELETE FROM `{0}`"
-        c.execute(query.format(db_table))
+        if input("Очистить таблицу? [yN]: ") == 'y':
+            query = "DELETE FROM `{0}`"
+            c.execute(query.format(db_table))
 
         for q in result:
             query = """
